@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<section id="soundscape-interaction" class="bg-primary">
+  <div class="container">
+    <div class="col-xs-12 text-justify">
+
+      <h1 class="text-left"> SoundScape Interaction (2015) </h1>
+
+      <br>
+
+      <p>The SoundScape Interaction project was a 4 month adventure of developments on room acoustics, in collaboration with the Imperial College (London) and Bang & Olufsen. The idea was to propose a VR game where one could experience the impact of a room on sound propagation. Visual scenes were created and rendered in Blender and its game engine, explored through an Oculus DK2 thanks to BlenderVR. Room acoustic was simulated in Max/MSP, part of the patch being based on IRCAM’s SPAT rendering engine.</p>
+
+      <h5 class="text-center">Demo Reel</h5>
+      <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+        <iframe class="embed-responsive-item" style="border: 2px solid #b4b4b4;" src="https://www.youtube.com/embed/WQkEmSCm_nU" frameborder="0" allowfullscreen></iframe>
+      </div>      
+      <p> </p>
+
+      <p>I’ve learnt a lot during the developments of this project, and would like to thank once more the researchers from B&O and the ICL for taking me in there.</p>
+
+      <h2 class="text-left"> Assets description </h2>
+      <p>During the experiment, participants where exposed to different room acoustics. They were at first asked to indicate whether the acoustic matched the room they were in, then were to indicate when they perceived a change in the room acoustic while switching between predefined reverberation time (T60) values (Just Noticeable Difference assessment).</p>
+
+      <h5 class="text-center">Room 0: no reverb, used as introduction scene (explain experiment goal, interactions, etc.)</h5>
+      <p>
+        <img src="{{ site.baseurl }}/img/ssi-room0.png" class="img-responsive img-framed-on-primary" alt="">
+      </p>
+
+      <h5 class="text-center">Room 1: Bedroom-like reverb</h5>
+      <p>
+        <img src="{{ site.baseurl }}/img/ssi-room1.png" class="img-responsive img-framed-on-primary" alt="">
+        <audio controls preload='auto' class="audio_volume_only"><source src="{{ site.baseurl }}/sounds/ssi-room1.wav" type="audio/wav"></audio>
+      </p>
+
+      <h5 class="text-center">Room 2: Garage-like reverb</h5>
+      <p>
+        <img src="{{ site.baseurl }}/img/ssi-room2.png" class="img-responsive img-framed-on-primary" alt="">
+        <audio controls preload='auto' class="audio_volume_only"><source src="{{ site.baseurl }}/sounds/ssi-room2.wav" type="audio/wav"></audio>
+      </p>
+
+      <h5 class="text-center">Room 3: Church-like reverb</h5>
+      <p>
+        <img src="{{ site.baseurl }}/img/ssi-room3.png" class="img-responsive img-framed-on-primary" alt="">
+        <audio controls preload='auto' class="audio_volume_only"><source src="{{ site.baseurl }}/sounds/ssi-room3.wav" type="audio/wav"></audio>
+      </p>
+
+      <h5 class="text-center">Room 3: Improved version (used in the <a class="text-faded link-on-primary-bg" href="https://groupeaa.limsi.fr/projets:ghostorch">Ghost Orchestra Project</a>)</h5>
+      <p><img src="{{ site.baseurl }}/img/ssi-room3-improved.png" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <h5 class="text-center">Sound Rendering Engine GUI (developed in Max/MSP)</h5>
+      <p><img src="{{ site.baseurl }}/img/ssi-audio-engine.png" class="img-responsive img-framed-on-primary" alt=""></p>
+
+
+    </div>
+  </div>
+</section>
