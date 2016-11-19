@@ -32,14 +32,14 @@ a {
     }
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
     @include sans-serif-font;
-}
+}*/
 
 p {
     font-size: 16px;
@@ -473,6 +473,10 @@ body {
         display: block;
     }
 
+    .dropdown a:focus{
+        background-color: $theme-dark; 
+    }
+
     .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
         margin-top: 0;
     }
@@ -495,6 +499,14 @@ body {
         left: -6px;
     }
 }
+@media (max-width: 767px) {
+    
+    .navbar-nav > li > .dropdown-menu :hover{ 
+        background-color: rgba(white, .7); 
+        color: red; 
+    }
+}
+
 // audio 
 .audio_volume_only {
     width: 100%;
