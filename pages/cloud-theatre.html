@@ -1,0 +1,104 @@
+---
+layout: default
+---
+
+<!-- INSTALL EVERTims -->
+<section id="cloud-theatre" class="bg-primary">
+  <div class="container">
+    <div class="col-xs-12 text-justify">
+
+      <h2 class="text-left"> Cloud Theatre (2017) </h2>
+
+      <br>
+
+      <p>This project is in the same vein as the <a class="text-faded link-on-primary-bg" href="{{ site.baseurl }}/pages/ghost-orchestra.html">Ghost Orchestra</a>: recreating the acoustic of an existing architectural design and experience it in VR. I had roughly a month to work on that one. Let's start with week 0 (timing is not really accurate. Indulge me, I wanted to do it blog-like for once).</p>
+
+      <h3>Week 0: Project Description</h3>
+
+      <p> Cloud Theatre is to take place in a virtual reproduction of the the Athénée Theatre (Paris). 2 actors are to be filmed and audio recorded to end in the 3D model, both as visual avatars and audio sources. On the top of it all, the acoustics/visuals of the theatre are to be reproduced for different periods (today, back in the 90s before the last renovation, and in the early days of the theatre). We start by getting our hands on a rough model of the Theatre, the very same we used in a previous BGE-based point cloud project.</p>
+
+      <h6>Previous use-case of the Athénée model: BGE based point-cloud rendering</h6>
+      <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+        <iframe class="embed-responsive-item" style="border: 2px solid #b4b4b4;" src="https://www.youtube.com/embed/Ahfda87PVnY" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <p> </p> <!-- force empty vspace -->
+
+      <p>Bart starts getting through the pain of checking the archives and creating Geometrical Acoustic model (a 3D mesh with acoustic material information) to simulate the auralizations for the three periods (changing seats here, modifying the orchestra pit there...). Thank you Bart :). On my side, I start texturing the model and try my hand at Blender Cycles. First impression? still work to do..</p>
+
+      <h6>First Cycles render attempt</h6>
+      <p><img src="{{ site.baseurl }}/img/ct-week-0.jpg" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <h3>Week 1: Getting my bearings in Cycles</h3>
+
+      <p> I won't comment much on the hassle this has been, but a hassle it was.. Texturing, modeling, re-modeling because the topology was just not adapted. Needless to say, I spent an awful lot of time listening to Price's tutorials :). Thank you Adrew. </p>
+
+      <h6>Getting to know Cycles</h6>
+      <p><img src="{{ site.baseurl }}/img/ct-week-1-1.jpg" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <p>Didn't I tell you? Brian, the project director also wanted a 360 rendering of the whole thing, for “you need only to tweak that camera thing no? cool, do it.” (love you Brian).</p>
+      <h6>360? there you go</h6>
+      <p><img src="{{ site.baseurl }}/img/ct-week-1-2.jpg" class="img-responsive img-framed-on-primary" alt=""></p>
+      <p>Why this last image is in B&W? that's for week 2. </p>
+
+      <h3>Week 2: Crowd Master and compositing</h3>
+
+      <p>Brian figured that at some point, we would have actors, theatre, ... and a lot of empty seats. Would not do, at all. The problem was, animating one dude is fun, 150 of them less so. We needed to go procedural on that one, and that's where <a class="text-faded link-on-primary-bg" href="http://crowdmaster.org">CrowdMaster</a> came in. The whole thing is still under developments, but clearly reached a stage where one can rely on it for audience animation. Choosing a decent character (no time to design a proper set at this point), and here we went trying different types of animation and NLA distributions... </p>
+
+      <p><img src="{{ site.baseurl }}/img/ct-week-2-1.gif" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <p> and we're good to go. </p>
+
+      <p><img src="{{ site.baseurl }}/img/ct-week-2-2.jpg" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <h3>Week 3: Getting the cloud in the theatre</h3>
+
+
+      <p>That one was quite a pain to get right (did we ever though..). We wanted to use the actors video recording directly in the model, not relying on rigs and animation to recreate the play. The look and feel of the engineers in Prometheus was pretty much the target there. Based on the Kinect2 camera recordings (using <a class="text-faded link-on-primary-bg" href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a>), the plan was to use the depth video as a depth map for the point cloud, and fill in the texture with the RGB video. After a series of trial and errors, we finally got the look we were after</p>
+
+      <p><img src="{{ site.baseurl }}/img/ct-week-3-1.gif" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe> -->
+
+      <div class="row">
+        <div class="col-sm-2"> </div>
+        <div class="col-sm-8">
+          <h6>Cycles point-cloud evolution</h6>
+          <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+            <iframe class="embed-responsive-item" style="border: 2px solid #b4b4b4;" src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+      <p> </p> <!-- force empty vspace -->
+
+      <p>To achieve the final point-cloud look, I used displacement on subdivided plane (screen), parent of a sphere/plane (pixel), dupliverted with RGB texture applied based on object space. I finally used a deform mesh modified to apply the pyramid like projection cone to make sure actors' size remain constant when they moved between foreground and background. I pushed a <a class="text-faded link-on-primary-bg" href="https://github.com/PyrApple/blender-cycles-point-cloud">Github repo</a> with a basic Cycles point-cloud project for reference.</p>
+
+      <h3>Week 4: Final rendering and integration of the auralization</h3>
+
+<!--
+      <p class="text-center"><a class="text-faded link-on-primary-bg" href="https://groupeaa.limsi.fr/projets:ghostorch">Project Webpage</a></p>
+
+      <p><img src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot.png" class="img-responsive img-framed-on-primary" alt=""></p>
+
+      <p> ... <a class="text-faded link-on-primary-bg" href="http://www.catt.se/">url</a> </p>
+
+      <p> </p>
+
+      <h3>Demos</h3>
+
+      <h5 class="text-center">demo header</h5>
+      <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+        <iframe class="embed-responsive-item" style="border: 2px solid #b4b4b4;" src="https://www.youtube.com/embed/-dPiAJyEonA" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <p> </p>
+ -->
+      <h3>From kinect recordings to Blender Cycles point cloud</h3>
+
+      <!-- <p>Point-cloud recording based on Kinect2 (based on <a class="text-faded link-on-primary-bg" href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a>).</p> -->
+
+    </div>
+  </div>
+</section>
