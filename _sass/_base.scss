@@ -59,6 +59,14 @@ h5 {
     margin-bottom: 5px;
 }
 
+h6 {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
 .bg-primary {
     background-color: $theme-primary;
 }
@@ -466,18 +474,18 @@ body {
         margin-top: -1px;
     }
 
-    .navbar-nav > li > a { 
+    .navbar-nav > li > a {
         color: red;
     }
 
-    .navbar-nav > li > .dropdown-menu { 
+    .navbar-nav > li > .dropdown-menu {
         background-color: $theme-dark;
         font-size: 14px;
     }
     .navbar-nav > li > .dropdown-menu a{ color: rgba(white, .7); }
-    .navbar-nav > li > .dropdown-menu a:hover{ 
-        background-color: $theme-dark; 
-        color: white; 
+    .navbar-nav > li > .dropdown-menu a:hover{
+        background-color: $theme-dark;
+        color: white;
     }
 
     .dropdown-menu li:hover .sub-menu {
@@ -489,7 +497,7 @@ body {
     }
 
     .dropdown a:focus{
-        background-color: $theme-dark; 
+        background-color: $theme-dark;
     }
 
     .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
@@ -515,14 +523,14 @@ body {
     }
 }
 @media (max-width: 767px) {
-    
-    .navbar-nav > li > .dropdown-menu :hover{ 
-        background-color: rgba(white, .7); 
-        color: red; 
+
+    .navbar-nav > li > .dropdown-menu :hover{
+        background-color: rgba(white, .7);
+        color: red;
     }
 }
 
-// audio 
+// audio
 .audio_volume_only {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.1);
