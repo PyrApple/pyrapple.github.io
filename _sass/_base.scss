@@ -535,3 +535,23 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+// HAL publication embedded in iframe
+.iContainer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 10%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.iContainer iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.Rubrique {
+    color:red;
+}
