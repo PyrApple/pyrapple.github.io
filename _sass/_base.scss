@@ -5,6 +5,10 @@ body {
     background-color: $theme-primary;
 }
 
+.container{
+    max-width:80%;
+}
+
 body {
     @include serif-font;
 }
@@ -34,20 +38,16 @@ a {
 
 h1, h2, h3, h4, h5, h6{
     text-align: left;
+    font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6, p, ul, li {
-    font-weight: 100;
     @include sans-serif-font;
     color: $theme-secondary;
 }
 
 ul, li, p {
+    font-weight: 100;
     font-size: 16px;
-}
-
-p {
-    line-height: 1.5;
-    margin-bottom: 20px;
 }
 
 li{
@@ -61,28 +61,35 @@ ul {
     padding-top: 0px;
 }
 
+p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
 h2 {
-    margin-top: 0px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 h3 {
     font-size: 21px;
     line-height: 1.5;
-    margin-top: 40px;
-    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 h4 {
     font-size: 18px;
     line-height: 1.5;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 h5 {
+    margin-top: 20px;
     font-size: 16px;
 }
 
 .bg-primary {
     background-color: $theme-primary;
+    padding-bottom: 20px;
 }
 
 .bg-secondary {
@@ -111,18 +118,26 @@ aside {
 }
 
 /*Navigation*/
+.navbar-bottom {
+    background-color: $theme-primary;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .navbar-default {
 
-    background-color: darken($theme-primary, 5%);
+    background-color: darken($theme-primary, 15%);
     border-color: rgba($theme-secondary, .5);
     @include sans-serif-font;
     @include transition-all;
-    font-weight: 300;
+    font-weight: $navbar-font-weight;
 
     // title
     .navbar-header .navbar-brand {
+        text-transform: uppercase;
+        font-weight: $navbar-font-weight;
         color: $theme-police-inert;
-        font-size: 20px;
         &:hover,
         &:focus {
             color: $theme-police-alert;
@@ -133,6 +148,7 @@ aside {
     .navbar-nav > li > a {
         text-transform: uppercase;
         color: $theme-police-inert;
+        font-weight: $navbar-font-weight;
     }
     .navbar-nav > li > a:hover,
     .navbar-nav > li > a:focus {
@@ -153,7 +169,7 @@ aside {
     // sub item (small screen)
     .navbar-nav .open .dropdown-menu > li > a {
         color: $theme-police-inert;
-        font-weight: 300;
+        font-weight: $navbar-font-weight;
     }
     .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -165,7 +181,7 @@ aside {
         background-color: darken($theme-primary, 5%);
     }
     .navbar-nav > li > .dropdown-menu a { 
-        font-weight: 300;
+        font-weight: $navbar-font-weight;
         color: $theme-police-inert; 
     }
     .navbar-nav > li > .dropdown-menu a:hover{
@@ -329,6 +345,20 @@ header {
         }
     }
 }*/
+
+#video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
 
 // Sections
 
@@ -502,7 +532,7 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .embed-responsive{
@@ -511,14 +541,14 @@ code {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .iframe-responsive{
     border:1px solid $theme-secondary;
     border-radius: 1px;
     padding: 0;
-    margin-bottom: 15px;    
+    margin-bottom: 0px;    
 }
 
 /*for A4 pdf*/

@@ -47,6 +47,8 @@ $theme-secondary: rgb(42, 42, 42);
 $theme-police-inert: darken($theme-secondary, 100%);
 $theme-police-alert: lighten($theme-secondary, 30%);
 
+$navbar-font-weight: 500;
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",
