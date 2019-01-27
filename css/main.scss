@@ -34,10 +34,18 @@
 // }
 
 // variables.less
-// $theme-primary: #F05F40;
+
+/*
 $theme-primary: rgb(42,42,42);
 $theme-secondary: rgb(240, 240, 240);
-$theme-dark: #222;
+$theme-police-inert: darken($theme-secondary, 10%);
+$theme-police-alert: lighten($theme-secondary, 10%);
+*/
+
+$theme-primary: rgb(240, 240, 240);
+$theme-secondary: rgb(42, 42, 42);
+$theme-police-inert: darken($theme-secondary, 100%);
+$theme-police-alert: lighten($theme-secondary, 30%);
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
