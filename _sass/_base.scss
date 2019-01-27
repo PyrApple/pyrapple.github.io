@@ -131,7 +131,6 @@ aside {
 .navbar-default {
 
     background-color: darken($theme-primary, 15%);
-    border-color: rgba($theme-secondary, .5);
     @include sans-serif-font;
     @include transition-all;
     font-weight: $navbar-font-weight;
@@ -144,6 +143,15 @@ aside {
         &:hover,
         &:focus {
             color: $theme-police-alert;
+        }
+    }
+
+    /*toggle button color*/
+    border-color: rgba($theme-secondary, .5);
+    .navbar-toggle {
+        border-color: rgba($theme-secondary, .5);
+        .icon-bar {
+            background-color: rgba($theme-secondary, .5);
         }
     }
 
