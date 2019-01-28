@@ -3,6 +3,31 @@ layout: default
 ---
 <!-- ABOUT -->
 
+<head>
+    <script>
+        var videos = [
+        "https://www.youtube.com/embed/a4taMsypqos", // hrtf indiv. game
+        "https://www.youtube.com/embed/q6muds1qW-w?rel=0", // nu-soundworks
+        "https://www.youtube.com/embed/IBNP_Wk3vVc?rel=0", // cloud-theatre
+        "https://www.youtube.com/embed/EJ-GHdC7-eo", // evertims
+        "https://www.youtube.com/embed/oU-RHMYrkaY", // blendervr
+        "https://www.youtube.com/embed/-dPiAJyEonA", // ghostorchestra
+        "https://www.youtube.com/embed/7z7MuPFr9PU", // anaglyph
+        // "https://www.youtube.com/embed/pQjNpCCntgk", // the-blob
+        ];
+        window.onload = function () {
+            var playerDiv = document.getElementById("random_player");
+            var player = document.createElement("IFRAME");
+            var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+            player.setAttribute('src', randomVideoUrl);
+            player.setAttribute('class', "embed-responsive-item");
+            player.setAttribute('allowFullScreen', "allowFullScreen");
+            playerDiv.appendChild(player);
+        };
+    </script>
+</head>
+
+
 <section class="bg-primary" id="front-page">
 
     <div class="container">
@@ -18,7 +43,7 @@ layout: default
             <h1 class="section-heading text-center">Audio-Visual VR</h1>
             <h2 class="text-center">Gathered Research and Programming Projects</h2>
             <br>
-            <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+            <div id="random_player" class="embed-responsive embed-responsive-16by9 col-xs-12">
 
                 <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a4taMsypqos" frameborder="0" allowfullscreen></iframe> -->
 
@@ -28,7 +53,7 @@ layout: default
 
                 <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/q6muds1qW-w?rel=0" frameborder="0" allowfullscreen></iframe> -->
 
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mZwYrd824e4" frameborder="0" allowfullscreen></iframe>
+                <!-- <iframe id="index-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/mZwYrd824e4" frameborder="0" allowfullscreen></iframe> -->
 
             </div>
         </div>
