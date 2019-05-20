@@ -74,6 +74,12 @@ p {
     margin-bottom: 10px;
 }
 
+small {
+    display:inline-block;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
 h2 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -633,4 +639,77 @@ body {
 .iContainer iframe {
   height: 100%;
   width: 100%;
+}
+
+/* thumbnails on main page*/
+
+.pack {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+.card {
+    float: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.index-anchor {
+    text-decoration: none;
+    color: $theme-primary;
+    &:hover {
+        text-decoration: none;
+        color: $theme-primary;
+    }
+}
+
+.panel-img {
+    width: 100%;
+    border-bottom: 1px solid $theme-secondary;
+}
+
+.panel-body {
+    padding-bottom: 0px;
+
+    p {
+        color: $theme-secondary;
+    }
+}
+
+.panel {
+    height: 100%;
+    margin-bottom: 0px;
+    border: none;
+    overflow:auto;
+    color: $theme-secondary;
+    background-color: $theme-primary;
+    /*border:1px solid $theme-secondary;*/
+    border-radius: 10px;
+    box-shadow: 0 0 1px rgba(0,0,0,.4);
+    transition: all 0.3s ease;
+    &:hover, &:focus, &:active {
+        box-shadow: 
+            0px 1px 0px #ccc,
+            0px 2px 0px #c9c9c9,
+            0px 3px 0px #bbb,
+            0px 4px 0px #b9b9b9,
+            0px 6px 0px rgba(0,0,0,.1),
+            0px 1px 0px rgba(0,0,0,.3),
+            0px 3px 0px rgba(0,0,0,.2),
+            0px 5px 0px rgba(0,0,0,.25),
+            0 7px  7px rgba(0,0,0,.1),
+            0 8px  7px rgba(0,0,0,.1),
+            0 9px  9px rgba(0,0,0,.1),
+            0 10px  10px rgba(0,0,0,.15),
+            0 15px  15px rgba(0,0,0,.16),
+    }
+}
+
+/* avoid weird empty row slot in bootstrap for Safari (for index panels)*/
+.row:before, .row:after {
+display: flex !important;
 }

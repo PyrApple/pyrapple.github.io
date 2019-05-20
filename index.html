@@ -4,7 +4,7 @@ layout: default
 <!-- ABOUT -->
 
 <head>
-    <script>
+<!--     <script>
         var videos = [
         "https://www.youtube.com/embed/a4taMsypqos", // hrtf indiv. game
         "https://www.youtube.com/embed/q6muds1qW-w?rel=0", // nu-soundworks
@@ -24,7 +24,7 @@ layout: default
             player.setAttribute('allowFullScreen', "allowFullScreen");
             playerDiv.appendChild(player);
         };
-    </script>
+    </script> -->
 </head>
 
 
@@ -42,20 +42,47 @@ layout: default
         <div class="col-lg-12 col-lg-offset-0 text-center">
             <h1 class="section-heading text-center">Audio-Visual VR</h1>
             <h2 class="text-center">Gathered Research and Programming Projects</h2>
+
             <br>
-            <div id="random_player" class="embed-responsive embed-responsive-16by9 col-xs-12">
 
-                <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a4taMsypqos" frameborder="0" allowfullscreen></iframe> -->
+            <div class="row pack">
+                
+                {% assign sortedPages = site.pages | sort:'title' %}
 
-                <!-- <a href="{{ site.baseurl }}/pages/satin-coco.html"><img src="{{ site.baseurl }}/img/sc-blender-render.jpg" class="img-responsive" alt=""></a> -->
+                {% for page in sortedPages limit:100 %}
+                {% if page.thumbnail %}
 
-                <!-- <a href="{{ site.baseurl }}/pages/oculus-project.html"><img src="{{ site.baseurl }}/img/or-room-1.jpg" class="img-responsive" alt=""></a> -->
+                <div class="col-12 col-xs-6 col-sm-4 col-lg-3 card">
+                <a href="{{ page.url | prepend: site.baseurl }}" class="index-anchor">
+                    <div class="panel panel-default">
 
-                <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/q6muds1qW-w?rel=0" frameborder="0" allowfullscreen></iframe> -->
+                      <img class="panel-img" src="{{site.baseurl}}/img/{{page.thumbnail}}" alt="{{post.title}}">
 
-                <!-- <iframe id="index-iframe" class="embed-responsive-item" src="https://www.youtube.com/embed/mZwYrd824e4" frameborder="0" allowfullscreen></iframe> -->
+                      <div class="panel-body">
+                        <h3 class="panel-title">{{ page.title | truncate: 25 }}</h3>
+
+                        <p class = "text-left" ><small>
+                        <!-- {{ post.description | strip_html | strip_newlines | truncate: 57 }} -->
+                        {{ page.description }}
+                        </small></p>
+                      </div>
+
+                      <!-- <div class="panel-body">
+                      </div> -->
+                    </div>
+                </a>
+
+                </div>
+
+                {% endif %}
+                {% endfor %}
 
             </div>
+
+            <!-- <div id="random_player" class="embed-responsive embed-responsive-16by9 col-xs-12">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a4taMsypqos" frameborder="0" allowfullscreen></iframe>
+            </div> -->
+
         </div>
     </div>
 </section>
