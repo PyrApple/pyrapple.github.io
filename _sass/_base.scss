@@ -5,17 +5,12 @@ body {
     background-color: $theme-primary;
 }
 
-/*constrain size for big screens*/
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .container{
         max-width:80%;
         margin: auto;
     }
-    /*.navbar-bottom {
-        max-width:1000px;
-        margin: auto;
-    }    */
-}
+}*/
 
 body {
     @include serif-font;
