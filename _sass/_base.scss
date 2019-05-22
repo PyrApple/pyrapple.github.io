@@ -1,50 +1,64 @@
-html,
-body {
+// define locals
+$theme-primary: rgb(240, 240, 240);
+$theme-secondary: rgba(45, 45, 45, 0.98);
+// $theme-police-inert: darken($theme-secondary, 100%);
+// $theme-police-alert: lighten($theme-secondary, 30%);
+$theme-police-inert: white;
+$theme-police-alert: darken(white, 30%);
+// $navbar-background-color: rgba(45, 45, 45, 0.98);
+$navbar-background-color: rgba($theme-secondary, 0.98);
+$navbar-font-weight: 500;
+$transition-duration: 0.3s;
+
+html, body {
     height: 100%;
     width: 100%;
     background-color: $theme-primary;
 }
 
-/*@media (min-width: 768px) {
-    .container{
-        max-width:80%;
-        margin: auto;
-    }
-}*/
-
 body {
-    @include serif-font;
+    @include sans-serif-font;
 }
 
-hr {
-    border-color: $theme-primary;
-    border-width: 3px;
-    max-width: 50px;
-}
+// hr.light {
+//     border-color: $theme-secondary;
+// }
 
-hr.light {
-    border-color: $theme-secondary;
-}
-
-hr.secondary {
-    border-color: $theme-secondary;
-}
-
-a {
-    @include transition-all;
-    color: $theme-primary;
-    &:hover,
-    &:focus {
-        color: darken($theme-primary, 10%);
-    }
-}
+// hr.secondary {
+//     border-color: $theme-secondary;
+// }
 
 h1, h2, h3, h4, h5, h6{
     text-align: left;
     font-weight: 400;
 }
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
 h1, h2, h3, h4, h5, h6, p, ul, li {
-    @include sans-serif-font;
+    // @include sans-serif-font;
     color: $theme-secondary;
 }
 
@@ -57,6 +71,7 @@ li{
     margin: 0;
     padding: 2px;
 }
+
 ul {
     list-style-type: none;
     margin-bottom: 30px;
@@ -75,55 +90,30 @@ small {
     line-height: 1.3;
 }
 
-h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-h3 {
-    font-size: 21px;
-    line-height: 1.5;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-h4 {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-h5 {
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.bg-primary {
-    background-color: $theme-primary;
-    padding-bottom: 20px;
-}
-
-.bg-secondary {
-    background-color: $theme-secondary;
-}
-
-.bg-dark {
-    background-color: $theme-primary;
-    color: $theme-secondary;
-}
-
-.text-faded {
-    color: rgba($theme-secondary, .8);
+hr {
+    border-color: $theme-secondary;
+    border-width: 3px;
+    max-width: 50px;
 }
 
 section {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: $theme-primary;
 }
 
 aside {
     padding: 50px 0;
 }
 
-.no-padding {
-    padding: 0;
+a {
+    // @include transition-all;
+    transition: all $transition-duration ease;
+    color: $theme-primary;
+    &:hover,
+    &:focus {
+        color: darken($theme-primary, 10%);
+    }
 }
 
 /*Navigation*/
@@ -136,9 +126,10 @@ aside {
 
 .navbar-default {
 
-    background-color: darken($theme-primary, 15%);
+    // background-color: darken($theme-primary, 15%);
+    background-color: $navbar-background-color;
     @include sans-serif-font;
-    @include transition-all;
+    transition: all $transition-duration ease;
     font-weight: $navbar-font-weight;
 
     // title
@@ -152,12 +143,16 @@ aside {
         }
     }
 
-    /*toggle button color*/
+    // toggle button (small screen)
     border-color: rgba($theme-secondary, .5);
     .navbar-toggle {
-        border-color: rgba($theme-secondary, .5);
+        border-color: $theme-police-inert;
+        &:hover,
+        &:focus {
+            background-color: lighten($navbar-background-color, 10%);
+        }     
         .icon-bar {
-            background-color: rgba($theme-secondary, .5);
+            background-color: $theme-police-inert;
         }
     }
 
@@ -175,12 +170,12 @@ aside {
     // main item when opened (small screen)
     .navbar-nav .open > a {
         color: $theme-police-inert;
-        background-color: transparent;
     }
     .navbar-nav .open > a:hover,
-    .navbar-nav .open > a:focus {
-        background-color: transparent;
+    .navbar-nav .open > a:focus, 
+    .navbar-nav .open > a:active {
         color: $theme-police-alert;
+        background-color: $navbar-background-color;
     }
 
     // sub item (small screen)
@@ -195,67 +190,27 @@ aside {
 
     // sub item (large screen)
     .navbar-nav > li > .dropdown-menu {
-        background-color: darken($theme-primary, 5%);
+        background-color: $navbar-background-color;
+        // background-color: rgba( $navbar-background-color, 0.96 );
     }
     .navbar-nav > li > .dropdown-menu a { 
         font-weight: $navbar-font-weight;
-        color: $theme-police-inert; 
+        color: $theme-police-inert;
     }
     .navbar-nav > li > .dropdown-menu a:hover{
-        background-color: darken($theme-primary, 5%);
+        background-color: transparent;
         color: $theme-police-alert;
     }
 
     .dropdown a:focus{
-        background-color: darken($theme-primary, 5%);
-    }        
-    
-    /*
-    @media (min-width: 768px) {
-        background-color: $theme-primary;
-        border-color: rgba(white, .7);
-        .navbar-header .navbar-brand {
-            color: rgba(white, .7);
-            &:hover,
-            &:focus {
-                color: white;
-            }
-        }
-        .nav > li > a,
-        .nav > li > a:focus {
-            color: rgba(white, .7);
-            &:hover {
-                color: white;
-            }
-            @media (min-width: 768px) {
-                &:focus {
-                    background-color: rgba(white, .1);;
-                }
-            }
-        }
-
-        // OPTION FOR NAVBAR CHANGE WHEN SCROLLING DOWN
-        &.affix {
-            background-color: rgba(black, 0.5);
-            border-color: rgba($theme-primary, .5);
-            .navbar-header .navbar-brand {
-                color: $theme-primary;
-                font-size: 14px;
-                &:hover,
-                &:focus {
-                    color: darken($theme-primary, 0%);
-                }
-            }
-            .nav > li > a,
-            .nav > li > a:focus {
-                color: $theme-primary;
-                &:hover {
-                    color: $theme-primary;
-                }
-            }
-        }
     }
-    */
+    
+    // // when screen scrolled down 
+    // @media (min-width: 768px) {
+    //     &.affix {
+    //         background-color: rgba($navbar-background-color, 0.5);
+    //     }
+    // }
 
 }
 
@@ -363,29 +318,29 @@ header {
     }
 }*/
 
-#video-background {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-}
+// #video-background {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     min-width: 100%;
+//     min-height: 100%;
+//     width: auto;
+//     height: auto;
+//     z-index: -100;
+//     -webkit-transform: translateX(-50%) translateY(-50%);
+//     transform: translateX(-50%) translateY(-50%);
+//     background-size: cover;
+// }
 
 // Sections
 
-.section-heading {
-    margin-top: 0;
-}
+// .section-heading {
+//     margin-top: 0;
+// }
 
-.section-heading {
-    margin-top: 0;
-}
+// .section-heading {
+//     margin-top: 0;
+// }
 
 // .service-box {
 //     max-width: 400px;
@@ -475,81 +430,109 @@ header {
 //     }
 // }
 
-.div-bordered-on-primary-bg {
-    border-radius: 5px;
-    border: 2px solid $theme-secondary;
-    padding: 20px;
+// .div-bordered-on-primary-bg {
+//     border-radius: 5px;
+//     border: 2px solid $theme-secondary;
+//     padding: 20px;
+// }
+
+// .bg-primary {
+//     background-color: $theme-primary;
+//     padding-bottom: 20px;
+// }
+
+// .bg-dark {
+//     background-color: $theme-primary;
+//     color: $theme-secondary;
+// }
+
+// .text-faded {
+//     color: rgba($theme-secondary, .8);
+// }
+
+.no-padding {
+    padding: 0;
 }
 
-.div-no-padding-lr{
+.no-padding-lr{
     padding-left: 0px;
     padding-right: 0px;
 }
 
-// Bootstrap Overrides
-.text-primary {
-    color: $theme-primary;
+// all but navbar's
+a:not(.navbar-link) {
+    @include link-variant($theme-secondary, lighten($theme-secondary, 40%));
 }
 
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
+//////////////////////////// REFACTORING UNTIL HERE (but for navbar section) ////////////////////////////
+
+
+// // Bootstrap Overrides
+// .text-primary {
+//     color: $theme-primary;
+// }
+
+// .no-gutter > [class*='col-'] {
+//     padding-right:0;
+//     padding-left:0;
+// }
 
 // Hyperlink Styles
 // Button Styles
-.link-url {
-    @include link-variant($theme-secondary, lighten($theme-secondary, 10%));
-}
+// .link-url {
+//     @include link-variant($theme-secondary, lighten($theme-secondary, 10%));
+// }
 
 // Button Styles
 .btn-default {
     @include button-variant($theme-primary, rgba(245, 255, 255, 0.8), grey);
 }
 
-.btn-primary {
-    @include button-variant(black, rgba(245, 225, 10, 0.8), black);
-    // @include button-variant(black, rgba(140, 235, 70, 0.8), black);
-}
+// .btn {
+//     @include sans-serif-font;
+//     // border: none;
+//     border-radius: 4px;
+//     font-weight: 700;
+//     text-transform: uppercase;
+// }
 
-.btn-primary-2 {
-    @include button-variant(rgba(white, .7), rgba(white, .05), white);
-    // @include button-variant(black, rgba(140, 235, 70, 0.8), black);
-}
+// .btn-xl {
+//     padding: 15px 30px;
+// }
 
-.btn {
-    @include sans-serif-font;
-    // border: none;
-    border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.btn-xl {
-    padding: 15px 30px;
-}
+// .table th, .table td {
+//      border-top: none !important;
+//  }
 
 // table, th, td {
 //     // border: 1px solid rgba(white,0.7);
 //     border-collapse: separate;
 // }
-th, td {
-    padding-top: 20px;
-}
+// th, td {
+//     padding-top: 20px;
+// }
 
-code {
-    color: white;
-    background: transparent;
+// code {
+//     color: white;
+//     background: transparent;
+// }
 
-}
+// img {
+//     border:1px solid $theme-secondary;
+//     border-radius: 1px;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     margin-bottom: 10px;
+// }
 
-.img-responsive{
+// bootstrap extend
+.img-responsive {
     border:1px solid $theme-secondary;
     border-radius: 1px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;    
 }
 
 .embed-responsive{
@@ -568,54 +551,54 @@ code {
     margin-bottom: 0px;    
 }
 
-/*for A4 pdf*/
+// for A4 pdf
 .embed-responsive-210by297 {
   padding-bottom: 141.42%;
 }
 
-// Contact
-#contact .fa {
-    color: $theme-primary;
-    font-size: 4em;
-}
+// // Contact
+// #contact .fa {
+//     color: $theme-primary;
+//     font-size: 4em;
+// }
 
-// Extras
-// -- Highlight Color Customization
-::-moz-selection {
-    color: white;
-    text-shadow: none;
-    background: #c4e1e6;
-}
+// // Extras
+// // -- Highlight Color Customization
+// ::-moz-selection {
+//     color: white;
+//     text-shadow: none;
+//     background: #c4e1e6;
+// }
 
-::selection {
-    color: white;
-    text-shadow: none;
-    background: #c4e1e6;
-}
+// ::selection {
+//     color: white;
+//     text-shadow: none;
+//     background: #c4e1e6;
+// }
 
-img::selection {
-    color: white;
-    background: transparent;
-}
+// img::selection {
+//     color: white;
+//     background: transparent;
+// }
 
-img::-moz-selection {
-    color: white;
-    background: transparent;
-}
+// img::-moz-selection {
+//     color: white;
+//     background: transparent;
+// }
 
-body {
-    -webkit-tap-highlight-color: $theme-primary;
-}
+// body {
+//     -webkit-tap-highlight-color: $theme-primary;
+// }
 
-// audio
-.audio_volume_only {
+// audio playbars
+audio {
     width: 100%;
     background-color: transparent;
     color: $theme-secondary;
 }
 
 // font awsome
-.fa {
+.fa, .fas, .fab {
     color: $theme-secondary;
 }
 
@@ -637,7 +620,6 @@ body {
 }
 
 /* thumbnails on main page*/
-
 .pack {
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
@@ -654,12 +636,12 @@ body {
 }
 
 .index-anchor {
-    text-decoration: none;
-    color: $theme-primary;
-    &:hover {
-        text-decoration: none;
-        color: $theme-primary;
-    }
+    // text-decoration: none;
+    // color: $theme-primary;
+    // &:hover {
+    //     text-decoration: none;
+    //     color: $theme-primary;
+    // }
 }
 
 .panel-img {
@@ -669,10 +651,9 @@ body {
 
 .panel-body {
     padding-bottom: 0px;
-
-    p {
-        color: $theme-secondary;
-    }
+    // p {
+    //     color: $theme-secondary;
+    // }
 }
 
 .panel {
@@ -685,26 +666,15 @@ body {
     /*border:1px solid $theme-secondary;*/
     border-radius: 10px;
     box-shadow: 0 0 1px rgba(0,0,0,.4);
-    transition: all 0.3s ease;
+    transition: all $transition-duration ease;
     &:hover, &:focus, &:active {
-        box-shadow: 
-            0px 1px 0px #ccc,
-            0px 2px 0px #c9c9c9,
-            0px 3px 0px #bbb,
-            0px 4px 0px #b9b9b9,
-            0px 6px 0px rgba(0,0,0,.1),
-            0px 1px 0px rgba(0,0,0,.3),
-            0px 3px 0px rgba(0,0,0,.2),
-            0px 5px 0px rgba(0,0,0,.25),
-            0 7px  7px rgba(0,0,0,.1),
-            0 8px  7px rgba(0,0,0,.1),
-            0 9px  9px rgba(0,0,0,.1),
-            0 10px  10px rgba(0,0,0,.15),
-            0 15px  15px rgba(0,0,0,.16),
+        -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
+        -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
+        box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
     }
 }
 
 /* avoid weird empty row slot in bootstrap for Safari (for index panels)*/
 .row:before, .row:after {
-display: flex !important;
+    display: flex !important;
 }

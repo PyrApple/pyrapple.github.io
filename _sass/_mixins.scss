@@ -61,7 +61,6 @@
 
 @mixin link-variant($color, $color-hover)
 {
-
     color: $color;
     text-decoration: underline;
     &:visited {
@@ -79,7 +78,8 @@
 @mixin sans-serif-font()
 {
 	/*font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
-	font-family: "GeoSansLight", Helvetica, Arial, sans-serif;
+	// font-family: "GeoSansLight", Helvetica, Arial, sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 @mixin serif-font()

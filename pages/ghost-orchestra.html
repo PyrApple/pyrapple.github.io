@@ -6,7 +6,7 @@ thumbnail: go-thumbnail.jpg
 ---
 
 <!-- INSTALL EVERTims -->
-<section id="ghost-orchestra" class="bg-primary">
+<section id="ghost-orchestra">
   <div class="container">
     <div class="col-xs-12 text-justify">
 
@@ -17,43 +17,43 @@ thumbnail: go-thumbnail.jpg
 
       <p>The aim of the Ghost Orchestra project was to investigate our perception of space through sound and images. The journey started with a concert, organized to celebrate the 850th birthday of the Notre-Dame de Paris cathedral, staging a symphonic orchestra accompanying soloists and choirs through J. Massenet oratorio “La Vierge”.</p>
 
-      <p class="text-center"><a class="text-faded link-url" href="https://groupeaa.limsi.fr/projets:ghostorch">Project Webpage</a></p>
+      <p class="text-center"><a href="https://groupeaa.limsi.fr/projets:ghostorch">Project Webpage</a></p>
 
       <h4>Live rendering of the Cathedral</h4>
-      <p><img src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot.jpg" class="img-responsive " alt=""></p>
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot.jpg"  alt=""></p>
 
-      <p>During the event, each instrument was recorded, the audio tracks later to be used in a recreation of the concert in a virtual reproduction of the cathedral. To reproduce the exact acoustic of the building, the room impulse responses from instruments to potential listener positions were simulated – 3rd order ambisonic IR from a <a class="text-faded link-url" href="http://www.catt.se/">CATT-Acoustic</a> model of the cathedral – and convolved with the audio tracks.</p>
+      <p>During the event, each instrument was recorded, the audio tracks later to be used in a recreation of the concert in a virtual reproduction of the cathedral. To reproduce the exact acoustic of the building, the room impulse responses from instruments to potential listener positions were simulated – 3rd order ambisonic IR from a <a href="http://www.catt.se/">CATT-Acoustic</a> model of the cathedral – and convolved with the audio tracks.</p>
 
       <h4>Mesh creation</h4>
-      <p><img src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot-2.jpg" class="img-responsive " alt=""></p>
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot-2.jpg"  alt=""></p>
 
-      <p>The visual model of the cathedral itself was created in <a class="text-faded link-url" href="http://www.autodesk.fr/products/3ds-max/overview">3DS MAX</a>, exported in <a class="text-faded link-url" href="https://www.blender.org/">Blender</a> for real-time rendering (based on the <a class="text-faded link-url" href="https://blendervr.limsi.fr/doku.php">BlenderVR</a> add-on for Oculus DK2 rendering and on Blender Cycles for 360° player).</p>
+      <p>The visual model of the cathedral itself was created in <a href="http://www.autodesk.fr/products/3ds-max/overview">3DS MAX</a>, exported in <a href="https://www.blender.org/">Blender</a> for real-time rendering (based on the <a href="https://blendervr.limsi.fr/doku.php">BlenderVR</a> add-on for Oculus DK2 rendering and on Blender Cycles for 360° player).</p>
 
 
       <h3>Demos</h3>
 
       <h4>Oculus DK2 based visualization and Binaural sound (wear headphones)</h4>
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-dPiAJyEonA" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/-dPiAJyEonA" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <h4>Blender Cycle Equirectangular Ambisonic rendering (wear headphones)</h4>
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zk1us0NYfug" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/zk1us0NYfug" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <h3>Miscellaneous devs</h3>
 
       <p>As one of the project requirements was to animate visual instrument based on their associated audio tracks, I had to test various designs of audio-visualizers in the Blender Game Engine, based on Video Textures, custom shaders, physics, etc. Here are some example implementations.</p>
 
-      <h4>Vertex Shader based Audio-Visualizer (source code on <a class="text-faded link-url" href="https://github.com/PyrApple/bge-audio-visualizer">Github</a>)</h4>
+      <h4>Vertex Shader based Audio-Visualizer (source code on <a href="https://github.com/PyrApple/bge-audio-visualizer">Github</a>)</h4>
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WUWbu5xfYDA" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/WUWbu5xfYDA" frameborder="0" allowfullscreen></iframe>
       </div>      
 
       <h4>Another GLSL based Audio-Visualizer tryout</h4>
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bxeuBmlNwBw" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/bxeuBmlNwBw" frameborder="0" allowfullscreen></iframe>
       </div>
 
     </div>
