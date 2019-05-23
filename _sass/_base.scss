@@ -31,6 +31,10 @@ body {
 h1, h2, h3, h4, h5, h6{
     text-align: left;
     font-weight: 400;
+    // avoid margin ignored after floating elements
+    clear: both;
+    display: inline-block;
+    width: 100%;    
 }
 
 h2 {
@@ -452,11 +456,6 @@ header {
 
 .no-padding {
     padding: 0;
-}
-
-.no-padding-lr{
-    padding-left: 0px;
-    padding-right: 0px;
 }
 
 // all but navbar's

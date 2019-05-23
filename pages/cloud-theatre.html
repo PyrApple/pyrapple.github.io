@@ -10,11 +10,12 @@ thumbnail: ct-week-3-1.gif
   <div class="container">
     <div class="col-xs-12 text-justify">
 
-      <h2 class="text-left"> A Cloud Theatre (WIP) </h2>
+      <h2>A Cloud Theatre (WIP)</h2>
 
       <br>
 
       <p>This project is in the same vein as the <a href="{{ site.baseurl }}/pages/ghost-orchestra.html">Ghost Orchestra</a>: recreating the acoustic of an existing architectural design and experience it in VR. I had roughly a month to work on that one. Let's start with week 0 (timing is not really accurate. Indulge me, I wanted to do it blog-like for once).</p>
+
 
       <h3>Week 0: Project Description</h3>
 
@@ -44,6 +45,7 @@ thumbnail: ct-week-3-1.gif
       <p><img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-1-2.jpg"  alt=""></p>
       <p>Why this last image is in B&W? that's for week 2. </p>
 
+
       <h3>Week 2: Crowd Master and compositing</h3>
 
       <p>Brian figured that at some point, we would have actors, theatre, ... and a lot of empty seats. Would not do, at all. The problem was, animating one dude is fun, 150 of them less so. We needed to go procedural on that one, and that's where <a href="http://crowdmaster.org">CrowdMaster</a> came in. The whole thing is still under developments, but clearly reached a stage where one can rely on it for audience animation. Choosing a decent character (no time to design a proper set at this point), and here we went trying different types of animation and NLA distributions... </p>
@@ -64,61 +66,48 @@ thumbnail: ct-week-3-1.gif
 
       <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe> -->
 
-      <div class="row">
-        <div class="col-sm-2"> </div>
-        <div class="col-sm-8">
-          <h4>Cycles point-cloud evolution</h4>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-sm-2"></div>
-      </div>
-
       <p>To achieve the final point-cloud look, I used displacement on subdivided plane (screen), parent of a sphere/plane (pixel), dupliverted with RGB texture applied based on object space. I finally used a deform mesh modified to apply the pyramid like projection cone to make sure actors' size remain constant when they moved between foreground and background. I pushed a <a href="https://github.com/PyrApple/blender-cycles-point-cloud">Github repo</a> with a basic Cycles point-cloud project for reference.</p>
+      
+      <h4>Cycles point-cloud evolution</h4>
+      <div class="col-xs-12 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/embed/eaHofLNcrBc" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    
+    
 
-      <h3 id="flat-video-1">Week 4: Final rendering and integration of the auralization</h3>
+      <h3>Week 4: Final rendering and integration of the auralization</h3>
 
       <p>Audio, visual, animation, spatialized public noise... putting everything together and the play goes live. The following video is still a work in progress, but gives a rather good idea of what the final rendering should look like.</p>
+
+      <h4>Visual rendering, mid row</h4>
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-4-1.jpg"  alt=""></p>
 
       <h4>First release of the Cloud Theatre</h4>
       <div class="embed-responsive embed-responsive-16by9">
         <iframe src="https://www.youtube.com/embed/IBNP_Wk3vVc?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
 
-      <p> And the equirectangular / 360° version with 2nd order Ambisonic to binaural rendering for 2 different positions in the theatre: </p>
+      <p>And the equirectangular / 360° version with 2nd order Ambisonic to binaural rendering for 2 different positions in the theatre: </p>
 
-      <h4>Cloud Theatre 360°: mid row</h4>
+      <h4>360° (equirectangular) rendering: last row, high lights</h4>
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-4-2.jpg"  alt=""></p>
+
+      <h4>360° (equirectangular) rendering: mid row</h4>
       <div class="embed-responsive embed-responsive-16by9">
       <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1007682782744413%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
       </div>
 
-      <h4>Cloud Theatre 360°: front row</h4>
+      <h4>360° (equirectangular) rendering: front row</h4>
       <div class="embed-responsive embed-responsive-16by9">
       <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1014162432096448%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
       </div>
-
-<!--
-      <p class="text-center"><a href="https://groupeaa.limsi.fr/projets:ghostorch">Project Webpage</a></p>
-
-      <p><img class="img-responsive" src="{{ site.baseurl }}/img/go-notre-dame-model-screenshot.png"  alt=""></p>
-
-      <p> ... <a href="http://www.catt.se/">url</a> </p>
-
-      <p> </p>
-
-      <h3>Demos</h3>
-
-      <h5 class="text-center">demo header</h5>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.youtube.com/embed/-dPiAJyEonA" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <p> </p>
- -->
-      <!-- <h3>From kinect recordings to Blender Cycles point cloud</h3> -->
-
-      <!-- <p>Point-cloud recording based on Kinect2 (based on <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a>).</p> -->
 
     </div>
   </div>
