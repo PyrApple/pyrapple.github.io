@@ -2,7 +2,10 @@
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
+  // mechanism to avoid kick back on safari to hide navbar even on scroll up
+  var showNavBar =  ( prevScrollpos > currentScrollPos) || ( currentScrollPos <= 10 )
+  // show / hide navbar
+  if ( showNavBar ) {
     document.getElementById("mainNav").style.top = "0";
   } else {
     document.getElementById("mainNav").style.top = "-60px";
