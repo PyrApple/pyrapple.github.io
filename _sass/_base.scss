@@ -209,8 +209,8 @@ a {
     .dropdown a:focus{
     }
     
-    // // when screen scrolled down 
-    // @media (min-width: 768px) {
+    // // example of how to change navbar color when not on top of page
+    // @media (max-width: 768px) {
     //     &.affix {
     //         background-color: rgba($navbar-background-color, 0.5);
     //     }
