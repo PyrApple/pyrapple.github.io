@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6{
     width: 100%;    
 }
 
+h1 {
+    margin-top: 0px;
+}
+
 h2 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -662,8 +666,8 @@ audio {
     overflow:auto;
     color: $theme-secondary;
     background-color: $theme-primary;
-    /*border:1px solid $theme-secondary;*/
-    border-radius: 10px;
+    border: 1px solid rgba($theme-secondary, 0.2);
+    border-radius: 9px;
     box-shadow: 0 0 1px rgba(0,0,0,.4);
     transition: all $transition-duration ease;
     &:hover, &:focus, &:active {
