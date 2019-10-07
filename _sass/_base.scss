@@ -503,17 +503,23 @@ a:not(.navbar-link) {
 //     padding: 15px 30px;
 // }
 
-// .table th, .table td {
-//      border-top: none !important;
-//  }
 
-// table, th, td {
-//     // border: 1px solid rgba(white,0.7);
-//     border-collapse: separate;
-// }
-// th, td {
-//     padding-top: 20px;
-// }
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th, td {
+    text-align: center;
+    padding-top: 10px;
+}
+
+// first row bold 
+tr:first-child th {
+    font-weight: bold;
+    font-weight: 1000; 
+    font-size: 1.1em; 
+}
 
 // code {
 //     color: white;
