@@ -30,7 +30,7 @@ body {
 
 h1, h2, h3, h4, h5, h6{
     text-align: left;
-    font-weight: 400;
+    font-weight: 300;
     // avoid margin ignored after floating elements
     clear: both;
     display: inline-block;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 ul, li, p {
     font-weight: 300;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 li{
@@ -168,6 +168,7 @@ a {
     // main item
     .navbar-nav > li > a {
         /*text-transform: uppercase;*/
+        font-size: 17px;
         color: $theme-police-inert;
         font-weight: $navbar-font-weight;
         /*text-align: center;*/
@@ -234,7 +235,7 @@ a {
         /*width: 80%; // take brand width into account*/
     }
     .navbar-nav > li {
-        padding-left: 55px;
+        padding-left: 45px;
         padding-right: 0px;
     }
 
