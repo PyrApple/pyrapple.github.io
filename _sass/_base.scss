@@ -1,5 +1,5 @@
 // define locals
-$theme-primary: rgb(240, 240, 240);
+$theme-primary: rgb(255, 255, 255);
 $theme-secondary: rgba(45, 45, 45, 0.98);
 // $theme-police-inert: darken($theme-secondary, 100%);
 // $theme-police-alert: lighten($theme-secondary, 30%);
@@ -7,7 +7,7 @@ $theme-police-inert: white;
 $theme-police-alert: darken(white, 30%);
 // $navbar-background-color: rgba(45, 45, 45, 0.98);
 $navbar-background-color: rgba($theme-secondary, 0.98);
-$navbar-font-weight: 500;
+$navbar-font-weight: 300;
 $transition-duration: 0.3s;
 
 html, body {
@@ -71,8 +71,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 ul, li, p {
-    font-weight: 100;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 17px;
 }
 
 li{
@@ -134,15 +134,16 @@ a {
 
 .navbar-default {
 
-    // background-color: darken($theme-primary, 15%);
     background-color: $navbar-background-color;
     @include sans-serif-font;
     transition: all $transition-duration ease;
     font-weight: $navbar-font-weight;
 
-    // title
+    /* title */
     .navbar-header .navbar-brand {
-        text-transform: uppercase;
+    
+        padding-top: 17px;
+        margin-left: 0px;
         font-weight: $navbar-font-weight;
         color: $theme-police-inert;
         &:hover,
@@ -166,9 +167,10 @@ a {
 
     // main item
     .navbar-nav > li > a {
-        text-transform: uppercase;
+        /*text-transform: uppercase;*/
         color: $theme-police-inert;
         font-weight: $navbar-font-weight;
+        /*text-align: center;*/
     }
     .navbar-nav > li > a:hover,
     .navbar-nav > li > a:focus {
@@ -202,6 +204,7 @@ a {
         // background-color: rgba( $navbar-background-color, 0.96 );
     }
     .navbar-nav > li > .dropdown-menu a { 
+        font-size: 15px;
         font-weight: $navbar-font-weight;
         color: $theme-police-inert;
     }
@@ -224,6 +227,17 @@ a {
 
 // Dropdown auto expend (no need to toggle as bootstrap default)
 @media (min-width: 768px) {
+
+    // main item boxes
+    .navbar-nav {
+        float: right;
+        /*width: 80%; // take brand width into account*/
+    }
+    .navbar-nav > li {
+        padding-left: 55px;
+        padding-right: 0px;
+    }
+
     .dropdown-menu .sub-menu {
         left: 100%;
         position: absolute;
@@ -672,9 +686,9 @@ audio {
     overflow:auto;
     color: $theme-secondary;
     background-color: $theme-primary;
-    border: 1px solid rgba($theme-secondary, 0.2);
-    border-radius: 9px;
-    box-shadow: 0 0 1px rgba(0,0,0,.4);
+    border: 1px solid rgba($theme-secondary, .4);
+    border-radius: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
     transition: all $transition-duration ease;
     &:hover, &:focus, &:active {
         -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
