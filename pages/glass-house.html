@@ -1,0 +1,108 @@
+---
+layout: default
+title: Glass House
+description: Using VR auralization to support architectural decisions
+thumbnail: gh-thumbnail.jpg
+---
+
+<section id="glass-house">
+  <div class="container">
+    <div class="col-xs-12 text-justify">
+
+      <h2>Glass House (2018)</h2>
+
+      <p>This work was a case study in the context of <a href="https://perso.limsi.fr/wiki/doku.php/thery/accueil/">David Thery</a>'s thesis, carried out in collaboration with the <a href="http://theatreprojects.com/fr/">Theatre Projects</a>. On paper, the objective was to present a series of auralizations to assess different design choices for a new exhibition hall. As researchers, our goal was to examine the impact of auralization based assessment on the design decision process, as opposed to more traditional communication methods (i.e. numbers and curves).</p>
+
+      <p class="text-center"><a href="http://www.lam.jussieu.fr/Projets/index.php?page=GlassHouse">Project home page</a></p>
+
+      <p>After discussion with the project team, the core design of the “Glass House” hall was declined in 3 versions: without acoustic treatment, with lightweight diffusers (high frequencies dampening), and with lightweight diffusers coupled to inflatable “AQflex” bags serving as low frequency absorbers.
+      </p>
+
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/gh-render-equi-allabs-rear.jpg" alt=""></p>
+
+      <h3>Acoustic model to simulate Room Impulse Responses (RIRs)</h3>
+      
+      <p>The geometrical acoustic model was created in <a href="https://www.catt.se/">CATT-Acoustic</a>, from blueprints and mesh exported from the architect's <a href="https://www.autodesk.fr/products/revit/overview">Revit</a> project. Acoustic materials placements and properties (absorption, diffusion, etc.) were adjusted to create the 3 versions of the hall, based on specifications provided by Theatre Projects design team.</p>
+
+      <h4>Geometrical acoustic model (without and with lightweight diffusers)</h4>
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/gh-catt-model.jpg" alt=""></p>
+      
+
+      <h4>Simulated RIRs of the 3 configurations</h4>
+      <p>All these simulations and latter auralization have been exported as binaural renderings (from original Ambisonic 2nd order). Wear headphones.</p>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Front position, no absorption</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-noabs-front.wav" type="audio/wav"></audio>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Rear position, no absorption</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-noabs-rear.wav" type="audio/wav"></audio>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Front position, lightweight diffusers</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-halfabs-front.wav" type="audio/wav"></audio>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Rear position, lightweight diffusers</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-halfabs-rear.wav" type="audio/wav"></audio>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Front position, lightweight diffusers + AQflex</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-allabs-front.wav" type="audio/wav"></audio>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h5>Rear position, Lightweight diffusers + AQflex</h5>
+        <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-rir-allabs-rear.wav" type="audio/wav"></audio>
+      </div>
+
+
+      <h3>Visual Model to support the auralization</h3>
+
+      <p>A visual model was created to compliment the auralization, used to create perspective and 360° images that would serve as a base for the auralization videos. 360° auralizations were rendered with an <a href="https://www.oculus.com/go/">Oculus Go</a>. The model was created in <a href="https://www.blender.org/">Blender</a>, rendered in Cycles, using materials from the <a href="https://www.poliigon.com/">Poliigon</a> library.</p>
+
+      <h3>Final auralizations</h3>
+
+      <p>From here on, it simply was a question of which audio extract to use (for convolution with the RIRs) to better highlight the acoustic impact of the different configurations while illustrating foreseen uses of the Glass House. The one presented below is a Jazz cover of MC Hammer “U Can't Touch This” by the excellent <a href="https://www.youtube.com/watch?v=0FLrvnQG03E">Aubrey Logan</a>.</p>
+
+      <h4>Rear position, jazz, no absorption</h4>
+      <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-jazz-noabs-rear.mp3" type="audio/mp3"></audio>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/gh-render-flat-noabs-rear.jpg" alt="">
+
+      <h4>Rear position, jazz, lightweight diffusers</h4>
+      <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-jazz-halfabs-rear.mp3" type="audio/mp3"></audio>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/gh-render-flat-halfabs-rear.jpg" alt="">
+
+      <h4>Rear position, jazz, lightweight diffusers + AQflex</h4>
+      <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/gh-jazz-allabs-rear.mp3" type="audio/mp3"></audio>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/gh-render-flat-allabs-rear.jpg" alt="">
+
+      
+      <h3>Final auralizations, adding context noise</h3>
+
+      <p> Below the Glass House, the architects planned to build a large galleria to host cocktails and parties. To dampen the noise bleeding from one space to the next, they envisioned a massive glass sheet that could be lowered from the wall, covering the stairwell leading from the galleria to the Glass House. The auralizations below represent that design, staging a cocktail in the Glass House and a party in the galleria.</p>
+      
+      <!-- 
+      <h4>360° video auralization: front position, speech, lightweight diffusers + AQflex</h4>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F988750301492751%2F&show_text=0&width=560" frameborder="0" allowfullscreen></iframe>
+      </div>
+      -->
+
+      <h4>Rear position, cocktail, lightweight diffusers + AQflex, closed galleria</h4>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F448590655860117%2F&show_text=0&width=560" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <h4>Rear position, cocktail, no absorption, opened galleria</h4>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1173053889751657%2F&show_text=0&width=560" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+
+      <h3>Associated work</h3>
+
+      <p>D. Thery, V. Boccara, and B. F. Katz, “Auralization uses in acoustical design: a survey study,” J. Acoust. Soc. Am., vol. 145, no. 6, pp. 3446–3456, 2019, <a href="http://dx.doi.org/10.1121/1.5110711">doi:10.1121/1.5110711</a>.</p>
+
+    </div>
+  </div>
+</section>
