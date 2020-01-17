@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<!-- 
+<head>
+   <meta http-equiv="refresh"
+   content="0; url=https://doodle.com/poll/a8mwyshv4nxbtg88">
+</head>
+ -->
+
+<section id="meta-player">
+  <div class="container">
+    <div class="col-xs-12 text-justify">
+
+      <h2>Facebook meta player</h2>
+
+      <div id="fb-root"></div>
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+      <!-- dpq home made div of constant size to avoid FB.XFBML.parse(); visual resize upon reloading -->
+      <div style="display:block; width:100%; height:316px; background-color:#d8dbda;">
+
+        <!-- Your embedded video player code -->
+        <div id="fb-div" class="fb-video" data-href="https://www.facebook.com/lam.dalembert.upmc/videos/1014162432096448/" data-width="560" data-show-text="false">
+        </div>
+      
+      </div>
+
+      <form method="post">
+        <input name="videoSwitch" type="radio" onclick="onInput(1)" />cloud theatre
+        <input name="videoSwitch" type="radio" onclick="onInput(2)" />ghost orchestra
+      </form>
+
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
+
+      <!-- Load Facebook SDK for JavaScript -->
+      <script>
+
+          // var my_video_player;
+          // var currentPos = 0;
+          // 
+          // window.fbAsyncInit = function() {
+          //   FB.init({
+          //     appId      : '{your-app-id}',
+          //     xfbml      : true,
+          //     version    : 'v3.2'
+          //   });
+          
+          //   // Get Embedded Video Player API Instance
+            
+          //   FB.Event.subscribe('xfbml.ready', function(msg) {
+          //     if (msg.type === 'video') {
+          //       my_video_player = msg.instance;
+          //       console.log(currentPos);
+          //       my_video_player.play();
+          //       my_video_player.seek(currentPos);
+          //     }
+          //   });
+          // };
+
+          function onInput(val){
+            // define new video url
+            
+            var div = document.getElementById("fb-div");
+            
+            var videoId;
+            if( val == 1 ){ 
+                videoId = 'https://www.facebook.com/lam.dalembert.upmc/videos/1014162432096448/';
+            }
+            else{ 
+              videoId = 'https://www.facebook.com/lam.dalembert.upmc/videos/1007673762745315/'; 
+            }
+            
+            // currentPos = my_video_player.getCurrentPosition()
+
+            div.setAttribute("data-href", videoId);
+            console.log (div);
+
+            // reload changed element (not functional somehow)
+            // FB.XFBML.parse(div);
+
+            // reload whole elments concerned by XFBML
+            FB.XFBML.parse();
+
+            // // get current time for seamless transition
+            // var currentTime = player.getCurrentTime();
+            // player.loadVideoById({'videoId': videoId,
+            //        'startSeconds': currentTime,
+            //        'suggestedQuality': 'large'});
+            // console.log(val)
+          }
+
+      </script>
+
+    </div>
+  </div>
+</section>
