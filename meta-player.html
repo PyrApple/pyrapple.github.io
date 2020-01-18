@@ -19,7 +19,7 @@ layout: default
       <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
       <!-- dpq home made div of constant size to avoid FB.XFBML.parse(); visual resize upon reloading -->
-      <div style="display:block; width:100%; height:316px; background-color:#d8dbda;">
+      <div style="display:block; width:100%; height:316px; background-color:transparent;">
 
         <!-- Your embedded video player code -->
         <div id="fb-div" class="fb-video" data-href="https://www.facebook.com/lam.dalembert.upmc/videos/1014162432096448/" data-width="560" data-show-text="false">
@@ -28,9 +28,17 @@ layout: default
       </div>
 
       <form method="post">
-        <input name="videoSwitch" type="radio" onclick="onInput(1)" />cloud theatre
-        <input name="videoSwitch" type="radio" onclick="onInput(2)" />ghost orchestra
+        <br>
+        <input name="videoSwitch" type="radio" onclick="onInput(4)" /> 2015 - front row (10)
+        <br>
+        <input name="videoSwitch" type="radio" onclick="onInput(1)" /> 2015 - mid room (13)  
+        <input name="videoSwitch" type="radio" onclick="onInput(3)" /> pre 1988 - mid room (13)  
+        <input name="videoSwitch" type="radio" onclick="onInput(2)" /> original - mid room (13)
+        <br>
+        <input name="videoSwitch" type="radio" onclick="onInput(0)" /> 2015 - balcony (07)
       </form>
+
+
 
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
 
@@ -59,24 +67,23 @@ layout: default
           //   });
           // };
 
-          function onInput(val){
+          function onInput(videoId){
             // define new video url
             
             var div = document.getElementById("fb-div");
             
-            var videoId;
-            if( val == 1 ){ 
-                videoId = 'https://www.facebook.com/lam.dalembert.upmc/videos/1014162432096448/';
-            }
-            else{ 
-              videoId = 'https://www.facebook.com/lam.dalembert.upmc/videos/1007673762745315/'; 
-            }
+            urlList = [
+              'https://www.facebook.com/lam.dalembert.upmc/videos/1007673762745315', // Cloud Theatre 2015 configuration - balcony (07)
+              'https://www.facebook.com/lam.dalembert.upmc/videos/1007681269411231', // Cloud Theatre 2015 configuration - mid room (13)
+              'https://www.facebook.com/lam.dalembert.upmc/videos/1007682782744413', // Cloud Theatre original configuration - mid room (13)
+              'https://www.facebook.com/lam.dalembert.upmc/videos/1007684402744251', // Cloud Theatre pre 1998 configuration - mid room (13)
+              'https://www.facebook.com/lam.dalembert.upmc/videos/1014162432096448', // Cloud Theatre 2015 configuration - front row (10)
+            ]
             
             // currentPos = my_video_player.getCurrentPosition()
 
-            div.setAttribute("data-href", videoId);
-            console.log (div);
-
+            div.setAttribute("data-href", urlList[videoId]);
+            
             // reload changed element (not functional somehow)
             // FB.XFBML.parse(div);
 
