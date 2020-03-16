@@ -1,0 +1,67 @@
+---
+layout: default
+title: 3D Tune-In
+description: Designing games and applications for tuning and learning about hearing aids.
+thumbnail: 3dti-thumbnail.jpg
+---
+
+<section id="3dti">
+  <div class="container">
+    <div class="col-xs-12 text-justify">
+
+      <h2>3D Tune-In (2018)</h2>
+
+      <p>3D Tune-In was a <a href="https://ec.europa.eu/programmes/horizon2020/en">H2020 European project</a>, coordinated at the <a href="https://www.imperial.ac.uk/">Imperial College London</a>, on the use of 3D sound and gamification techniques to support people using hearing aids. The objective was to help users better exploit their hearing aids as well as to enable non-wearers to experiment how hearing loss can impact everyday life.
+
+      <p class="text-center"><a href="http://3d-tune-in.eu/">3D Tune-In Website</a></p>
+
+      <h4>Project introduction video</h4>
+      
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.youtube.com/embed/g_FsF28bsmw" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+
+      <h3>3D audio engine (<a href="http://online-toolkit.3d-tune-in.eu">live demo</a>)</h3>
+
+      <p>My first contribution to the project was to work on understanding and simulating the impact of various hearing loss conditions on the perception of an auditory scene. We used these research to develop the 3D Tune-In audio engine, a binaural encoder capable of simulating both the effect of various hearing loss conditions and how hearing aids help mitigate these effects. The engine can downloaded from the <a href="http://3d-tune-in.eu/toolkit-developers">3D Tune-In website</a>, available as either a VST, a C++ SDK or a Unity plug-in. An online demo of the plugin is available <a href="http://online-toolkit.3d-tune-in.eu">here</a>.</p>
+
+      <h4>Snapshot of the 3D Tune-In audio engine GUI</h4>
+
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/3dti-toolkit.jpg" alt=""></p>
+      
+
+      <h3>Room acoustic and Ambisonic encoding order</h3>
+
+      <p>To propose realistic scenarios for the evaluation of hearing aids features, we implemented room acoustics support in the audio engine (based on room impulse response convolutions). As the intent was to have the engine running on all types of platforms (mobile, web, etc.), we spent some time investigating how to achieve the best perceivable rendering for a minimum CPU budget. As part of these investigations, we conducted a series of perceptual experiments to assess the impact of room acoustics rendering “resolution” on our perception of an auditory scene. The examples below are from one of these studies where we compared the perceived quality of room acoustics generated using either mono, stereo, or Ambisonic (1st, 2nd, 3rd order) impulse responses. Footsteps in these scenes have been created using Charles Verron's <a href="http://www.charlesverron.com/spad.html">SPAD</a> synthesizer.</p>
+
+      <div class="col-md-4 col-xs">
+        <h5>Anechoic scene (original)</h5>
+          <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-anechoic.mp3" type="audio/mp3"></audio>
+      </div>
+
+      <div class="col-md-4 col-xs">
+        <h5>Stereo RIR</h5>
+          <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-stereo.mp3" type="audio/mp3"></audio>
+      </div>
+
+      <div class="col-md-4 col-xs">
+        <h5>Ambisonic 3rd order RIR</h5>
+          <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-abir-20spk-3rd-allrad.mp3" type="audio/mp3"></audio>
+      </div>
+
+      <!-- <p><img class="img-responsive" src="{{ site.baseurl }}/img/3dti-room-medium.jpg" alt=""></p> -->
+      
+
+      <h3>Experiment on HRTF selection and binaural localization</h3>
+
+      <p>Using the 3D Tune-In toolkit, we developed a short VR game for HRTF selection. The concept was quite simple (if not new): you hear a sound, point towards the direction you think it came from, and get to live another round if you're right. Based on your results, the game would suggest the HRTF set (understand audio profile) with which you have the most affinities (localization wise).</p>
+
+      <h4>HRTF selection game: Unity editor</h4>
+
+      <p><img class="img-responsive" src="{{ site.baseurl }}/img/3dti-localization-game.jpg" alt=""></p>
+
+
+    </div>
+  </div>
+</section>
