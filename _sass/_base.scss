@@ -1,40 +1,58 @@
 // define locals
 $theme-primary: rgb(255, 255, 255);
-$theme-secondary: rgba(45, 45, 45, 0.98);
+$theme-secondary: rgba(0, 0, 0, 1);
 // $theme-police-inert: darken($theme-secondary, 100%);
 // $theme-police-alert: lighten($theme-secondary, 30%);
-$theme-police-inert: white;
-$theme-police-alert: darken(white, 30%);
+/*$theme-police-link: #2196f3;*/
+$theme-police-link: rgb(82, 177, 234);
+$theme-police-inert: $theme-primary;
+$theme-police-alert: $theme-police-link;
 // $navbar-background-color: rgba(45, 45, 45, 0.98);
 $navbar-background-color: rgba($theme-secondary, 0.98);
-$navbar-font-weight: 300;
-$transition-duration: 0.3s;
+$navbar-font-weight: 400;
+$transition-duration: 0.1s;
 
 html, body {
     height: 100%;
     width: 100%;
-    background-color: $theme-primary;
 }
 
 body {
     @include sans-serif-font;
+    -webkit-font-smoothing: antialiased;
+    /*background-color: $theme-primary;*/
+    background-color: transparent;
+    color: lighten($theme-secondary, 30%);
 }
 
-// hr.light {
-//     border-color: $theme-secondary;
-// }
+/*
+#front-page {
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;  
+}
+*/
 
-// hr.secondary {
-//     border-color: $theme-secondary;
-// }
+/*
+hr.light {
+    border-color: $theme-secondary;
+}
+
+hr.secondary {
+    border-color: $theme-secondary;
+}
+*/
 
 h1, h2, h3, h4, h5, h6{
     text-align: left;
     font-weight: 300;
-    // avoid margin ignored after floating elements
+    /*avoid margin ignored after floating elements*/
     clear: both;
     display: inline-block;
-    width: 100%;    
+    width: 100%;
+    color: $theme-secondary;
 }
 
 h1 {
@@ -44,10 +62,11 @@ h1 {
 h2 {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 h3 {
-    font-size: 21px;
+    font-size: 22px;
     line-height: 1.5;
     margin-top: 50px;
     margin-bottom: 10px;
@@ -65,14 +84,9 @@ h5 {
     font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
-    // @include sans-serif-font;
-    color: $theme-secondary;
-}
-
 ul, li, p {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 li{
@@ -88,7 +102,7 @@ ul {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.5em;
     margin-bottom: 10px;
 }
 
@@ -107,26 +121,25 @@ hr {
 section {
     padding-top: 100px;
     padding-bottom: 20px;
-    background-color: $theme-primary;
+    background-color: transparent;
 }
 
 aside {
     padding: 50px 0;
 }
 
-a {
-    // @include transition-all;
-    transition: all $transition-duration ease;
-    color: $theme-primary;
-    &:hover,
-    &:focus {
-        color: darken($theme-primary, 10%);
-    }
+// all but navbar's
+a:not(.navbar-link) {
+    /*text-decoration: underline;*/
+    font-weight: 400;
+    @include link-variant($theme-police-link, lighten($theme-police-link, 10%));
 }
+
 
 /*Navigation*/
 .navbar-bottom {
-    background-color: $theme-primary;
+    /*background-color: $theme-primary;*/
+    background-color: transparent;
     margin-bottom: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -152,20 +165,24 @@ a {
         }
     }
 
-    // toggle button (small screen)
+    /*toggle button (small screen)*/
     border-color: rgba($theme-secondary, .5);
     .navbar-toggle {
         border-color: $theme-police-inert;
-        &:hover,
-        &:focus {
-            background-color: lighten($navbar-background-color, 10%);
-        }     
         .icon-bar {
             background-color: $theme-police-inert;
         }
+        &:hover,
+        &:focus {
+            background-color: $navbar-background-color;
+            /*border-color: $theme-police-alert;*/
+            .icon-bar {
+                background-color: $theme-police-alert;
+            }
+        }     
     }
 
-    // main item
+    /*main item*/
     .navbar-nav > li > a {
         /*text-transform: uppercase;*/
         font-size: 17px;
@@ -178,7 +195,7 @@ a {
         color: $theme-police-alert;
     }
 
-    // main item when opened (small screen)
+    /*main item when opened (small screen)*/
     .navbar-nav .open > a {
         color: $theme-police-inert;
     }
@@ -189,7 +206,7 @@ a {
         background-color: $navbar-background-color;
     }
 
-    // sub item (small screen)
+    /*sub item (small screen)*/
     .navbar-nav .open .dropdown-menu > li > a {
         color: $theme-police-inert;
         font-weight: $navbar-font-weight;
@@ -199,7 +216,7 @@ a {
         color: $theme-police-alert;
     }
 
-    // sub item (large screen)
+    /*sub item (large screen)*/
     .navbar-nav > li > .dropdown-menu {
         background-color: $navbar-background-color;
         // background-color: rgba( $navbar-background-color, 0.96 );
@@ -216,20 +233,21 @@ a {
 
     .dropdown a:focus{
     }
-    
-    // // example of how to change navbar color when not on top of page
-    // @media (max-width: 768px) {
-    //     &.affix {
-    //         background-color: rgba($navbar-background-color, 0.5);
-    //     }
-    // }
+/*    
+    example of how to change navbar color when not on top of page
+    @media (max-width: 768px) {
+        &.affix {
+            background-color: rgba($navbar-background-color, 0.5);
+        }
+    }
+*/
 
 }
 
-// Dropdown auto expend (no need to toggle as bootstrap default)
+/*Dropdown auto expend (no need to toggle as bootstrap default)*/
 @media (min-width: 768px) {
 
-    // main item boxes
+    /*main item boxes*/
     .navbar-nav {
         float: right;
         /*width: 80%; // take brand width into account*/
@@ -477,11 +495,6 @@ header {
     padding: 0;
 }
 
-// all but navbar's
-a:not(.navbar-link) {
-    @include link-variant($theme-secondary, lighten($theme-secondary, 40%));
-}
-
 //////////////////////////// REFACTORING UNTIL HERE (but for navbar section) ////////////////////////////
 
 
@@ -614,11 +627,15 @@ tr:first-child th {
 //     -webkit-tap-highlight-color: $theme-primary;
 // }
 
-// audio playbars
+/* audio playbars */
 audio {
     width: 100%;
     background-color: transparent;
     color: $theme-secondary;
+}
+
+audio:focus {
+    outline: none;
 }
 
 // font awsome
@@ -656,6 +673,12 @@ audio {
     float: none;
     padding-right: 10px;
     padding-left: 10px;
+    padding-bottom: 10px;
+    @media (min-width: 576px) {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
     margin-bottom: 20px;
 }
 
@@ -687,15 +710,19 @@ audio {
     overflow:auto;
     color: $theme-secondary;
     background-color: $theme-primary;
-    border: 1px solid rgba($theme-secondary, .4);
+    border: 1px solid rgba($theme-secondary, 0.5);
     border-radius: 20px;
-    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    /*box-shadow: 0 0 8px rgba(0,0,0,.4);*/
     transition: all $transition-duration ease;
     &:hover, &:focus, &:active {
-        -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
-        -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
-        box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.63);
+        -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.63);
+        -moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.63);
+        box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.63);
     }
+}
+
+.panel-title {
+    font-weight: 400;
 }
 
 /* avoid weird empty row slot in bootstrap for Safari (for index panels)*/
