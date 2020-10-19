@@ -641,6 +641,9 @@ audio:focus {
 .fa, .fas, .fab {
     color: $theme-secondary;
 }
+.fa:hover, .fas:hover, .fab:hover{
+    color: $theme-police-link;
+}
 
 // HAL publication embedded in iframe
 .iContainer {
