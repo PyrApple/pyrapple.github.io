@@ -10,6 +10,7 @@ $theme-police-alert: $theme-police-link;
 $navbar-background-color: $theme-secondary;
 $navbar-font-weight: 400;
 $transition-duration: 0.1s;
+$margin_default: 30px; /* 4% */
 
 html, body {
     height: 100%;
@@ -44,6 +45,36 @@ hr.secondary {
 }
 */
 
+
+h1, h2 {
+    margin-top: calc(#{$margin_default} * 1.0);
+}
+
+h3, h4, h5, h6, p, ul{
+    margin-top: 0%;
+}
+
+h1, h2, h3{
+    margin-bottom: calc(#{$margin_default} * 1.0);
+}
+
+h4, h5 {
+    margin-bottom: calc(#{$margin_default} * 0.2);
+}
+
+.no-margin-bottom {
+    margin-bottom: calc(#{$margin_default} * 0.2);
+}
+
+h6, p, ul{
+    margin-bottom: calc(#{$margin_default} * 1.0);
+}
+
+audio, video, .img-responsive, .embed-responsive, .iframe-responsive {
+    margin-bottom: calc(#{$margin_default} * 1.0 + 5px);
+    margin-top: 5px;
+}
+
 h1, h2, h3, h4, h5, h6{
     text-align: left;
     font-weight: 300;
@@ -54,32 +85,21 @@ h1, h2, h3, h4, h5, h6{
     color: $theme-secondary;
 }
 
-h1 {
-    margin-top: 0px;
-}
-
 h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
     font-size: 30px;
 }
 
 h3 {
     font-size: 22px;
     line-height: 1.5;
-    margin-top: 50px;
-    margin-bottom: 10px;
 }
 
 h4 {
     font-size: 18px;
     line-height: 1.5;
-    margin-top: 30px;
-    margin-bottom: 10px;
 }
 
 h5 {
-    margin-top: 20px;
     font-size: 16px;
 }
 
@@ -94,15 +114,13 @@ li{
 }
 
 ul {
-    list-style-type: none;
-    margin-bottom: 30px;
-    padding-left: 10px;
+    /*list-style-type: none;*/
+    padding-left: 20px;
     padding-top: 0px;
 }
 
 p {
     line-height: 1.5em;
-    margin-bottom: 10px;
 }
 
 small {
@@ -118,7 +136,7 @@ hr {
 }
 
 section {
-    padding-top: 100px;
+    padding-top: 60px;
     padding-bottom: 20px;
     background-color: transparent;
 }
@@ -566,9 +584,8 @@ tr:first-child th {
 .img-responsive {
     border:1px solid $theme-secondary;
     border-radius: 1px;
-    margin-bottom: 10px;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto; 
 }
 
 .embed-responsive{
@@ -577,14 +594,12 @@ tr:first-child th {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
 }
 
 .iframe-responsive{
     border:1px solid $theme-secondary;
     border-radius: 1px;
-    padding: 0;
-    margin-bottom: 0px;    
+    padding: 0;  
 }
 
 // for A4 pdf
@@ -631,6 +646,7 @@ audio {
     width: 100%;
     background-color: transparent;
     color: $theme-secondary;
+    /*border-radius: 3px;*/
 }
 
 audio:focus {
