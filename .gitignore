@@ -6,5 +6,7 @@ vendor
 .sass-cache
 _site
 
+.dsp_cache
+
 # ignore platform specific files
 *.DS_Store
