@@ -89,6 +89,12 @@ Once jekyll installed as suggested in the previous section, use the following co
 bundle exec jekyll serve --baseurl ''
 ```
 
+### Check for broken links
+
+```bash
+bundle exec htmlproofer --empty-alt-ignore --file-ignore './_site/todelete/*' ./_site
+```
+
 ## Acknowledgments
 
 Website theme based on a Jekyll implementation of the [Creative Theme](http://startbootstrap.com/template-overviews/creative/) template by [Start Bootstrap](http://startbootstrap.com).
