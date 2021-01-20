@@ -269,9 +269,17 @@ a:not(.navbar-link) {
         float: none;
         /*float: right;*/
         width: 78%; /* take brand width into account */
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
+        float: none;
+        /*width: 100%;*/
     }
 
     .navbar-nav > li {
+        display: table-cell;
+        float: none;
+        text-align: center;
         width: calc(100% / 4); /* 4 items in the navbar */
     }
 
