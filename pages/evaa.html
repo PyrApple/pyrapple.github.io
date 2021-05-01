@@ -12,12 +12,92 @@ thumbnail: evaa-thumbnail.jpg
 
       <h2>Evaa (WIP)</h2>
 
-      <p>This project is an ongoing work on assessing the impact of room acoustics on musicians interpretation throughout the ages. We're currently developping the framework for real-time auralization, the tricky part being to account for sources directivity while using top-notch (i.e. pre-rendered) room impulse responses. Next step will be to recreate the visuals and acoustics of present and past rooms and concert halls to start experimenting.</p>
+      <p>The objective of the EVAA project is to assess the impact of room acoustics on musicians interpretation throughout the ages. Ahead: modelisation of virtual environments, room acoustic simulations, measurement of instruments directivity, and archaeoacoustics.</p>
 
-      <h4>Project kickoff illustration (Blender Cycles rendering, overlaid on photo)</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/evaa-ads-render.jpg" alt="">
+      <p class="text-center"><a href="https://evaa.lam.jussieu.fr/doku.php">EVAA website</a></p>
 
-      <img class="img-responsive " src="{{ site.baseurl }}/img/evaa-ads-render-2.jpg" alt="">
+      <h4>Project kickoff illustration (Blender Cycles rendering + background photo)</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-ads-render.jpg" alt="">
+
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-ads-render-2.jpg" alt="">
+      
+      <h3>Preparing the room (1/2): real-time adaptive visual rendering</h3>
+      
+      <p>The objective is to adapt the lab VR room (“MocapVR”) so that it can be used to immerse musicians into virtual rooms, providing a visual context to support later auralisations.</p>
+
+      <h4>MocapVR room (before changes)</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-mocapvr.jpg" alt="">
+
+      <h4>CAD of the screens rig</h4>
+      <img class="img-responsive borderless" src="{{ site.baseurl }}/img/evaa-mocapvr-screen-rig.jpg" alt="">
+
+      <h4>Screens mounted on the final rig</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-mocapvr-with-screen-real.jpg" alt="">
+
+      <h4>CAD of the projection setup</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-mocapvr-with-screen-vr.jpg" alt="">
+
+      <p>work in progress..</p>
+
+      <h3>Preparing the room (2/2): real-time adaptive audio rendering</h3>
+
+      <p>work in progress..</p>
+      
+      <!--
+      
+      <p>Now the plan is to project the image of a single high resolution videoprojector onto the 3 screens. Using the in-house OptiTrack system, we will assemble a script to adapt the projected image to the user point of view, for the rendering to feel like a window in the virtual world.</p>
+
+      <p>Thus, we built a Unity scene to ensure the homography + adaptive rendering (receiving optitrack data), based on modified version of <a href="https://widve.github.io/UniCAVE/">UniCAVE</a> library.</p>
+
+      <h4>UniCAVE (.gif)</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-unicave-concept.png" alt="">
+
+      <p>Giving in real-life:</p>
+
+      <h4>UniCAVE test scene (video)</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-unicave-test-scene.png" alt="">
+      
+      <h3> Preparing the room 2/2: real-time adaptive acoustic rendering</h3>
+
+      <p>To which we add real-time reverb, based on the 32 speaker system to which is fed the output of Peter's plugin, using CATT precomputed impulse responses for various rooms, adding directivity based on lobes space recomposition. Much like Farina's method.</p>
+
+      <h4>CATT acoustic lobe model + recomposition schematics</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-catt-lobes.png" alt="">
+
+      <h4>Video illustrating real-time acoustic source directivity (binaural)</h4>
+      <div class="embed-responsive embed-responsive-16by9 ">
+        <iframe src="https://www.youtube.com/embed/..." frameborder="0" allowfullscreen></iframe>
+      </div>
+
+
+      <h3> Study 1: Impact of room on musician play, VR ecology</h3>
+
+      <p>Objective of the study. Protocol and conditions presentation.</p>
+
+      <h4>Salon des nobles de la reine, Versailles</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-sdn.png" alt="">
+
+      <h4>Cité de la musique, Paris</h4>
+      <img class="img-responsive" src="{{ site.baseurl }}/img/evaa-cm.png" alt="">
+
+
+      <h4>Study 1 demoreel</h4>
+      <div class="embed-responsive embed-responsive-16by9 ">
+        <iframe src="https://www.youtube.com/embed/..." frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <p>A word on the results.</p>
+
+      <h3> Misc.  </h3>
+
+      <p>Students from ... had a go at integrating point cloud musicians into a virtual recreation of one of the room selected for the project (Salon des nobles, Versailles). In the same vein as the work on <a href="{{ site.baseurl }}/pages/cloud-theatre.html">Cloud Theatre</a>, with much better graphics.</p>
+      
+      <h4>Salon des nobles de la reine: point cloud rendering</h4>
+      <div class="embed-responsive embed-responsive-16by9 ">
+        <iframe src="https://www.youtube.com/embed/ZuzjzkTnv9s" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      -->
 
     </div>
   </div>
