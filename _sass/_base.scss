@@ -677,23 +677,6 @@ audio:focus {
     color: $theme-police-link;
 }
 
-// HAL publication embedded in iframe
-.iContainer {
-    background-color: $theme-primary;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 10%;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
-}
-
-.iContainer iframe {
-  height: 100%;
-  width: 100%;
-}
-
 /* thumbnails on main page*/
 .pack {
     display: -webkit-inline-flex;
@@ -766,3 +749,80 @@ audio:focus {
 .row:before, .row:after {
     display: flex !important;
 }
+
+/* HAL bibliography */
+
+/*
+.iframeHal {
+    background-color: $theme-primary;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+*/
+
+.iContainer {
+    background-color: $theme-primary;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 10%;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+.ChampRes { 
+    display: none; 
+}
+
+#res_script {
+    /*@include sans-serif-font !important;*/
+}
+
+.NoticeRes, .Rubrique, .SousRubrique, .NoticeRes {
+    color: $theme-secondary !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.ValeurRes,  {
+    margin-left: 0em;
+}
+
+/* after p */
+.ValeurRes, .ValeurRes > a {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* after h3 */
+.Rubrique { 
+    font-size: 22px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin-top: calc(#{$margin_default} * 2.0);
+    margin-bottom: calc(#{$margin_default} * 0.4);
+}
+
+/* after h4 */
+.SousRubrique { 
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: calc(#{$margin_default} * 0.6);
+    margin-bottom: calc(#{$margin_default} * 0.4);
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.Rubrique, .SousRubrique {
+    font-weight: 300;
+}
+
+.Fichier_joint, .LienBibtex { display: none; }
