@@ -809,7 +809,7 @@ audio:focus {
 }
 
 .Rubrique:first-of-type {
-    margin-top: calc(#{$margin_default} * 0.5);
+    margin-top: calc(#{$margin_default} * 1);
 }
 
 /* after h4 */
@@ -829,16 +829,16 @@ audio:focus {
     font-weight: 300;
 }
 
-/*.Fichier_joint, .LienBibtex { display: none; }*/
+.Fichier_joint, .LienBibtex { display: none; }
+
+/*
 .LienBibtexACoteFulltext > a > img, .LienBibtex > a > img {
     content:url("https://cdn.icon-icons.com/icons2/2148/PNG/512/bibtex_icon_132550.png");
     max-width: 18px;
 }
 .Fichier_joint > a > img {
-    content:url("https://www.svgrepo.com/show/59677/open-book.svg");
-    /*content:url("https://cdn.icon-icons.com/icons2/516/PNG/512/read_book_study_icon-icons.com_51077.png");*/
-    /*content:url("https://cdn.icon-icons.com/icons2/37/PNG/512/book_3725.png");*/
+    content:url("https://cdn.icon-icons.com/icons2/908/PNG/512/book-open-shape_icon-icons.com_70792.png");
     max-width: 18px;
-
 }
+*/
 
