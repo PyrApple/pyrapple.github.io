@@ -20,18 +20,41 @@ html, body {
 body {
     @include sans-serif-font;
     -webkit-font-smoothing: antialiased;
-    /*background-color: $theme-primary;*/
     background-color: transparent;
     color: lighten($theme-secondary, 10%);
 }
 
-/*
-#front-page {
+.has-background-image {
     background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;  
+    background-size: cover;
+}
+
+.blurred-overlay {
+    /*background: rgba(0, 0, 0, .35);*/
+    background: rgba(255, 255, 255, 1);
+    /*background: rgba($theme-secondary, .35);*/
+    backdrop-filter: blur(8px);
+    height: auto;
+    width: 100%;
+}
+
+#front-page {
+}
+
+/*
+#font-page-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -9999;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
 }
 */
 
