@@ -86,8 +86,9 @@ See instructions to set up a GitHub Pages site locally with Jekyll on [GitHub He
 Once jekyll installed as suggested in the previous section, use the following command in a terminal to start a local sever serving your local website @ http://localhost:4000/
 
 ```bash
-bundle exec jekyll serve --baseurl ''
+bundle exec jekyll serve --baseurl '' --host=192.168.0.41
 ```
+
 
 ### Check for broken links
 

@@ -1,30 +1,9 @@
 ---
 layout: default
 ---
-<!-- ABOUT -->
+
 
 <head>
-<!--     <script>
-        var videos = [
-        "https://www.youtube.com/embed/a4taMsypqos", // hrtf indiv. game
-        "https://www.youtube.com/embed/q6muds1qW-w?rel=0", // nu-soundworks
-        "https://www.youtube.com/embed/IBNP_Wk3vVc?rel=0", // cloud-theatre
-        "https://www.youtube.com/embed/EJ-GHdC7-eo", // evertims
-        "https://www.youtube.com/embed/oU-RHMYrkaY", // blendervr
-        "https://www.youtube.com/embed/-dPiAJyEonA", // ghostorchestra
-        "https://www.youtube.com/embed/7z7MuPFr9PU", // anaglyph
-        // "https://www.youtube.com/embed/pQjNpCCntgk", // the-blob
-        ];
-        window.onload = function () {
-            var playerDiv = document.getElementById("random_player");
-            var player = document.createElement("IFRAME");
-            var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
-            player.setAttribute('src', randomVideoUrl);
-            player.setAttribute('class', "embed-responsive-item");
-            player.setAttribute('allowFullScreen', "allowFullScreen");
-            playerDiv.appendChild(player);
-        };
-    </script> -->
 </head>
 
 
@@ -32,16 +11,10 @@ layout: default
 
     <div class="container">
 
-        <!-- background video -->
-        <!-- 
-        <video id="video-background" autoplay muted="muted" loop playsinline="playsinline">
-          <source src="{{ site.baseurl }}/img/bg-video.mp4" type="video/mp4">
-        </video> 
-        -->
-
         <div class="col-lg-12 col-lg-offset-0 text-center">
-            <h1 class="section-heading text-center no-margin-bottom">Audio-Visual VR</h1>
-            <h2 class="text-center">Gathered Research and Programming Projects</h2>
+
+            <h1 class="section-heading text-center no-margin-bottom">Acoustics and Mixed Realities</h1>
+            <h2 class="text-center">Research and Programming Projects</h2>
 
             <br> <br>
 
@@ -52,7 +25,7 @@ layout: default
                 {% for page in sortedPages limit:100 %}
                 {% if page.thumbnail %}
 
-                <div class="col-12 col-xs-6 col-sm-6 col-md-4 card">
+                <div class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 card">
                 <a href="{{ page.url | prepend: site.baseurl }}" class="index-anchor">
                     <div class="panel panel-default">
 
@@ -61,7 +34,7 @@ layout: default
                       <div class="panel-body">
                         <h3 class="panel-title">{{ page.title | truncate: 25 }}</h3>
 
-                        <p class = "text-left" ><small>
+                        <p class = "text-left" style="margin-bottom:0;" ><small>
                         <!-- {{ post.description | strip_html | strip_newlines | truncate: 57 }} -->
                         {{ page.description }}
                         </small></p>
