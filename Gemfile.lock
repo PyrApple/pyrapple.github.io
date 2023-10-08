@@ -60,6 +60,8 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
+    nokogiri (1.14.3-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.3-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
@@ -99,6 +101,7 @@ DEPENDENCIES
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
   minima (~> 2.5)
+  nokogiri (~> 1.14)
   rake (~> 13.0)
   tzinfo (~> 1.2)
   tzinfo-data
