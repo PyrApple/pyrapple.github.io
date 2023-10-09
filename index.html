@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <head>
 </head>
 
@@ -25,7 +24,7 @@ layout: default
                 {% for page in sortedPages limit:100 %}
                 {% if page.thumbnail %}
 
-                <div class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-4 col-xl-2 card">
+                <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 card">
                 <a href="{{ page.url | prepend: site.baseurl }}" class="index-anchor">
                     <div class="panel panel-default">
 
@@ -40,8 +39,6 @@ layout: default
                         </small></p>
                       </div>
 
-                      <!-- <div class="panel-body">
-                      </div> -->
                     </div>
                 </a>
 
@@ -51,10 +48,6 @@ layout: default
                 {% endfor %}
 
             </div>
-
-            <!-- <div id="random_player" class="embed-responsive embed-responsive-16by9 col-xs-12">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a4taMsypqos" frameborder="0" allowfullscreen></iframe>
-            </div> -->
 
         </div>
     </div>
