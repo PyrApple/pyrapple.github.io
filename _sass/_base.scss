@@ -260,6 +260,9 @@ a:not(.navbar-link) {
     .navbar-nav > li > .dropdown-menu {
         background-color: $navbar-background-color;
         // background-color: rgba( $navbar-background-color, 0.96 );
+        border-radius: 0px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
     }
     .navbar-nav > li > .dropdown-menu a { 
         font-size: 15px;
