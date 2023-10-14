@@ -569,6 +569,21 @@ header {
 //     @include link-variant($theme-secondary, lighten($theme-secondary, 10%));
 // }
 
+/* change padding of first and last columns */
+// div[class^="col-"] {
+//     padding-left: 0px;
+//     padding-right: 0px;
+// }
+
+// div[class^="col-"]:first-child {
+//     padding-left: 0px;
+// }
+
+// div[class^="col-"]:last-child {
+//     padding-right: 0px;
+// }
+
+
 // Button Styles
 .btn-default {
     @include button-variant($theme-primary, rgba(245, 255, 255, 0.8), grey);
