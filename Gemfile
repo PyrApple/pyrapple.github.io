@@ -35,4 +35,4 @@ gem "rake", "~> 13.0"
 
 gem "html-proofer", "~> 3.18"
 
-gem "nokogiri", "~> 1.14"
+gem "nokogiri", "~> 1.16"
