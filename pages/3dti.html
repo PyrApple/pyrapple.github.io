@@ -7,7 +7,7 @@ thumbnail: 3dti-thumbnail.jpg
 
 <section id="3dti">
   <div class="container">
-    <div class="col-xs-12 text-justify">
+    <div class="row text-justify">
 
       <h2>3D Tune-In (2018)</h2>
 
@@ -32,6 +32,7 @@ thumbnail: 3dti-thumbnail.jpg
 
       <p>To propose realistic scenarios for the evaluation of hearing aids features, we implemented room acoustics support in the audio engine (based on room impulse response convolutions). As the intent was to have the engine running on all types of platforms (mobile, web, etc.), we spent some time investigating how to achieve the best perceivable rendering for a minimum CPU budget. As part of these investigations, we conducted a series of perceptual experiments to assess the impact of room acoustics rendering “resolution” on our perception of an auditory scene. The examples below are from one of these studies where we compared the perceived quality of room acoustics generated using either mono, stereo, or Ambisonic (1st, 2nd, 3rd order) impulse responses. Footsteps in these scenes have been created using Charles Verron's <a href="http://www.charlesverron.com/spad.html">SPAD</a> synthesizer.</p>
 
+      <div class="row no-gutters">
       <div class="col-md-4 col-xs">
         <h5>Anechoic scene (original)</h5>
           <audio class="" controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-anechoic.mp3" type="audio/mp3"></audio>
@@ -45,6 +46,7 @@ thumbnail: 3dti-thumbnail.jpg
       <div class="col-md-4 col-xs">
         <h5>Ambisonic 3rd order RIR</h5>
           <audio class="" controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-abir-20spk-3rd-allrad.mp3" type="audio/mp3"></audio>
+      </div>
       </div>
 
       <!-- <p><img class="img-responsive" src="{{ site.baseurl }}/img/3dti-room-medium.jpg" alt=""></p> -->
