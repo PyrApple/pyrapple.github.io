@@ -17,11 +17,12 @@ layout: default
 
             <br> <br>
 
-            <div class="row pack">
+            <div id="panels-list" class="row pack">
                 
+                <!-- alphabetical order -->
                 {% assign sortedPages = site.pages | sort:'title' %}
 
-                {% for page in sortedPages limit:100 %}
+                {% for page in sortedPages %}
                 {% if page.thumbnail %}
 
                 <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 card">
