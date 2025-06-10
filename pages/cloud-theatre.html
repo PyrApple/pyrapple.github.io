@@ -5,111 +5,101 @@ description: Audio-visual reconstruction of a theatre play with realistic room a
 thumbnail: ct-week-3-1.gif
 ---
 
-<!-- INSTALL EVERTims -->
-<section id="cloud-theatre">
-  <div class="container">
-    <div class="row text-justify">
+<h2>Cloud Theatre (2018)</h2>
 
-      <h2>Cloud Theatre (2018)</h2>
+<p>This project is in the same vein as the <a href="{{ site.baseurl }}/pages/ghost-orchestra.html">Ghost Orchestra</a>: recreating the acoustic of an existing architectural design and experience it in VR. I had roughly a month to work on that one. Let's start with week 0 (timing is not really accurate. Indulge me, I wanted to do it blog-like for once).</p>
 
-      <p>This project is in the same vein as the <a href="{{ site.baseurl }}/pages/ghost-orchestra.html">Ghost Orchestra</a>: recreating the acoustic of an existing architectural design and experience it in VR. I had roughly a month to work on that one. Let's start with week 0 (timing is not really accurate. Indulge me, I wanted to do it blog-like for once).</p>
+<p class="text-center"><a href="http://www.lam.jussieu.fr/Projets/index.php?page=CloudTheatre">Project home page</a> and <a href="http://classes.bnf.fr/echo/index.php">BNF virtual exposition</a></p>
 
-      <p class="text-center"><a href="http://www.lam.jussieu.fr/Projets/index.php?page=CloudTheatre">Project home page</a> and <a href="http://classes.bnf.fr/echo/index.php">BNF virtual exposition</a></p>
+<h3>Week 0: Project Description</h3>
 
-      <h3>Week 0: Project Description</h3>
+<p> Cloud Theatre is to take place in a virtual reproduction of the the Athénée Theatre (Paris). 2 actors are to be filmed and audio recorded to end in the 3D model, both as visual avatars and audio sources. On the top of it all, the acoustics/visuals of the theatre are to be reproduced for different periods (today, back in the 90s before the last renovation, and in the early days of the theatre). We start by getting our hands on a rough model of the Theatre, the very same we used in a previous BGE-based point cloud project.</p>
 
-      <p> Cloud Theatre is to take place in a virtual reproduction of the the Athénée Theatre (Paris). 2 actors are to be filmed and audio recorded to end in the 3D model, both as visual avatars and audio sources. On the top of it all, the acoustics/visuals of the theatre are to be reproduced for different periods (today, back in the 90s before the last renovation, and in the early days of the theatre). We start by getting our hands on a rough model of the Theatre, the very same we used in a previous BGE-based point cloud project.</p>
+<h4>Previous use-case of the Athénée model: BGE based point-cloud rendering</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/Ahfda87PVnY" frameborder="0" allowfullscreen></iframe>
+</div>
 
-      <h4>Previous use-case of the Athénée model: BGE based point-cloud rendering</h4>
-      <div class="embed-responsive embed-responsive-16by9 ">
-        <iframe src="https://www.youtube.com/embed/Ahfda87PVnY" frameborder="0" allowfullscreen></iframe>
-      </div>
+<p>Bart starts getting through the pain of checking the archives and creating Geometrical Acoustic model (a 3D mesh with acoustic material information) to simulate the auralizations for the three periods (changing seats here, modifying the orchestra pit there...). Thank you Bart :). On my side, I start texturing the model and try my hand at Blender Cycles. First impression? still work to do..</p>
 
-      <p>Bart starts getting through the pain of checking the archives and creating Geometrical Acoustic model (a 3D mesh with acoustic material information) to simulate the auralizations for the three periods (changing seats here, modifying the orchestra pit there...). Thank you Bart :). On my side, I start texturing the model and try my hand at Blender Cycles. First impression? still work to do..</p>
-
-      <h4>First Cycles render attempt</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-0.jpg" alt="">
+<h4>First Cycles render attempt</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-0.jpg" alt="">
 
 
-      <h3>Week 1: Getting my bearings in Cycles</h3>
+<h3>Week 1: Getting my bearings in Cycles</h3>
 
-      <p> I won't comment much on the hassle this has been, but a hassle it was.. Texturing, modeling, re-modeling because the topology was just not adapted. Needless to say, I spent an awful lot of time listening to Price's tutorials :). Thank you Adrew. </p>
+<p> I won't comment much on the hassle this has been, but a hassle it was.. Texturing, modeling, re-modeling because the topology was just not adapted. Needless to say, I spent an awful lot of time listening to Price's tutorials :). Thank you Adrew. </p>
 
-      <h4>Getting to know Cycles</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-1-1.jpg"  alt="">
+<h4>Getting to know Cycles</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-1-1.jpg"  alt="">
 
-      <p>Didn't I tell you? Brian, the project director also wanted a 360° rendering of the whole thing, for “you need only to tweak that camera thing no? cool, do it.” (love you Brian).</p>
-      
-      <h4>360° (equirectangular) rendering depth map</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-1-2.jpg"  alt="">
-      <p>Why this last image is in B&W? that's for week 2. </p>
+<p>Didn't I tell you? Brian, the project director also wanted a 360° rendering of the whole thing, for “you need only to tweak that camera thing no? cool, do it.” (love you Brian).</p>
 
-
-      <h3>Week 2: Crowd Master and compositing</h3>
-
-      <p>Brian figured that at some point, we would have actors, theatre, ... and a lot of empty seats. Would not do, at all. The problem was, animating one dude is fun, 150 of them less so. We needed to go procedural on that one, and that's where <a href="http://crowdmaster.org">CrowdMaster</a> came in. The whole thing is still under developments, but clearly reached a stage where one can rely on it for audience animation. Choosing a decent character (no time to design a proper set at this point), and here we went trying different types of animation and NLA distributions... </p>
-
-      <img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-2-1.gif"  alt="">
-
-      <p> and we're good to go. </p>
-
-      <h4>Spectators in the theatre</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-2-2.jpg"  alt="">
+<h4>360° (equirectangular) rendering depth map</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-1-2.jpg"  alt="">
+<p>Why this last image is in B&W? that's for week 2. </p>
 
 
-      <h3>Week 3: Getting the cloud in the theatre</h3>
+<h3>Week 2: Crowd Master and compositing</h3>
 
-      <p>That one was quite a pain to get right (did we ever though..). We wanted to use the actors video recording directly in the model, not relying on rigs and animation to recreate the play. The look and feel of the engineers in Prometheus was pretty much the target there. Based on the Kinect2 camera recordings (using <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a>), the plan was to use the depth video as a depth map for the point cloud, and fill in the texture with the RGB video. After a series of trial and errors, we finally got the look we were after</p>
+<p>Brian figured that at some point, we would have actors, theatre, ... and a lot of empty seats. Would not do, at all. The problem was, animating one dude is fun, 150 of them less so. We needed to go procedural on that one, and that's where <a href="http://crowdmaster.org">CrowdMaster</a> came in. The whole thing is still under developments, but clearly reached a stage where one can rely on it for audience animation. Choosing a decent character (no time to design a proper set at this point), and here we went trying different types of animation and NLA distributions... </p>
 
-      <img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-3-1.gif"  alt="">
+<img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-2-1.gif"  alt="">
 
-      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe> -->
+<p> and we're good to go. </p>
 
-      <p>To achieve the final point-cloud look, I used displacement on subdivided plane (screen), parent of a sphere/plane (pixel), dupliverted with RGB texture applied based on object space. I finally used a deform mesh modified to apply the pyramid like projection cone to make sure actors' size remain constant when they moved between foreground and background. I pushed a <a href="https://github.com/PyrApple/blender-cycles-point-cloud">Github repo</a> with a basic Cycles point-cloud project for reference.</p>
-      
-      <h4>Cycles point-cloud evolution</h4>
-      <div class="row no-gutters">
-      <div class="col-xs-12 col-md-6">
-        <div class="embed-responsive embed-responsive-16by9 ">
-          <iframe src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="embed-responsive embed-responsive-16by9 ">
-          <iframe src="https://www.youtube.com/embed/eaHofLNcrBc" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      </div>
-    
-    
+<h4>Spectators in the theatre</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-2-2.jpg"  alt="">
 
-      <h3>Week 4: Final rendering and integration of the auralization</h3>
 
-      <p>Audio, visual, animation, spatialized public noise... putting everything together and the play goes live. The following video is still a work in progress, but gives a rather good idea of what the final rendering should look like.</p>
+<h3>Week 3: Getting the cloud in the theatre</h3>
 
-      <h4>Visual rendering, mid row</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-4-1.jpg"  alt="">
+<p>That one was quite a pain to get right (did we ever though..). We wanted to use the actors video recording directly in the model, not relying on rigs and animation to recreate the play. The look and feel of the engineers in Prometheus was pretty much the target there. Based on the Kinect2 camera recordings (using <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a>), the plan was to use the depth video as a depth map for the point cloud, and fill in the texture with the RGB video. After a series of trial and errors, we finally got the look we were after</p>
 
-      <h4>First release of the Cloud Theatre</h4>
-      <div class="embed-responsive embed-responsive-16by9 ">
-        <iframe src="https://www.youtube.com/embed/IBNP_Wk3vVc?rel=0" frameborder="0" allowfullscreen></iframe>
-      </div>
+<img class="img-responsive" src="{{ site.baseurl }}/img/ct-week-3-1.gif"  alt="">
 
-      <p>And the equirectangular / 360° version with 2nd order Ambisonic to binaural rendering for 2 different positions in the theatre: </p>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe> -->
 
-      <h4>360° (equirectangular) rendering: last row, high lights</h4>
-      <img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-4-2.jpg"  alt="">
+<p>To achieve the final point-cloud look, I used displacement on subdivided plane (screen), parent of a sphere/plane (pixel), dupliverted with RGB texture applied based on object space. I finally used a deform mesh modified to apply the pyramid like projection cone to make sure actors' size remain constant when they moved between foreground and background. I pushed a <a href="https://github.com/PyrApple/blender-cycles-point-cloud">Github repo</a> with a basic Cycles point-cloud project for reference.</p>
 
-      <h4>360° (equirectangular) rendering: mid row</h4>
-      <div class="embed-responsive embed-responsive-16by9 borderless">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1007682782744413%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-      </div>
-
-      <h4>360° (equirectangular) rendering: front row</h4>
-      <div class="embed-responsive embed-responsive-16by9 borderless">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1014162432096448%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-      </div>
-
+<h4>Cycles point-cloud evolution</h4>
+<div class="row no-gutters">
+  <div class="col-xs-12 col-md-6">
+    <div class="embed-responsive embed-responsive-16by9 ">
+      <iframe src="https://www.youtube.com/embed/qkx5TRQoWLk" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-</section>
+  <div class="col-xs-12 col-md-6">
+    <div class="embed-responsive embed-responsive-16by9 ">
+      <iframe src="https://www.youtube.com/embed/eaHofLNcrBc" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
+<h3>Week 4: Final rendering and integration of the auralization</h3>
+
+<p>Audio, visual, animation, spatialized public noise... putting everything together and the play goes live. The following video is still a work in progress, but gives a rather good idea of what the final rendering should look like.</p>
+
+<h4>Visual rendering, mid row</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-4-1.jpg"  alt="">
+
+<h4>First release of the Cloud Theatre</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/IBNP_Wk3vVc?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>And the equirectangular / 360° version with 2nd order Ambisonic to binaural rendering for 2 different positions in the theatre: </p>
+
+<h4>360° (equirectangular) rendering: last row, high lights</h4>
+<img class="img-responsive " src="{{ site.baseurl }}/img/ct-week-4-2.jpg"  alt="">
+
+<h4>360° (equirectangular) rendering: mid row</h4>
+<div class="embed-responsive embed-responsive-16by9 borderless">
+  <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1007682782744413%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+</div>
+
+<h4>360° (equirectangular) rendering: front row</h4>
+<div class="embed-responsive embed-responsive-16by9 borderless">
+  <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flam.dalembert.upmc%2Fvideos%2F1014162432096448%2F&show_text=0&width=560" width="560" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+</div>

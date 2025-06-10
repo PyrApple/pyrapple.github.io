@@ -5,81 +5,70 @@ description: Creation of a 1/8th binaural head for real-time scale model auraliz
 thumbnail: sm-thumbnail.jpg
 ---
 
-<!-- INSTALL EVERTims -->
-<section id="scale-head">
-  <div class="container">
-    <div class="row text-justify">
+<h2 class="text-left"> Scale Models (2019 - 2023) </h2>
 
-      <h2 class="text-left"> Scale Models (2019 - 2023) </h2>
+<p>The first objective of this project was to create a 1/8 scaled version of the Neumann <a href="https://www.neumann.com/en-en/products/microphones/ku-100/">KU-100</a> head to use for binaural measurements in scale models.</p>
 
-      <p>The first objective of this project was to create a 1/8 scaled version of the Neumann <a href="https://www.neumann.com/en-en/products/microphones/ku-100/">KU-100</a> head to use for binaural measurements in scale models.</p>
+<img style="max-width:600px; width:100%;" class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-model-2.jpg" alt="">
 
-      <img style="max-width:600px; width:100%;" class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-model-2.jpg" alt="">
+<h3>From 3D model to 3D printing</h3>
 
-      <h3>From 3D model to 3D printing</h3>
+<p>Modeling was based on a MRI scan of the dummy head, imported into Blender as a high resolution mesh. We adapted the mesh so that a pair of microphones could later be fitted behind each ear-drum.</p>
 
-      <p>Modeling was based on a MRI scan of the dummy head, imported into Blender as a high resolution mesh. We adapted the mesh so that a pair of microphones could later be fitted behind each ear-drum.</p>
+<img style="max-width:800px; width:100%;" class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-model-1.jpg" alt="">
 
-      <img style="max-width:800px; width:100%;" class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-model-1.jpg" alt="">
+<p>We then sent the 3D model for printing to <a href="https://www.sculpteo.com/">Sculpteo</a> while we dabbled on our side with Orsay's FabLab <a href="https://ultimaker.com/">Ultimaker 2</a>. The difference in resolution is somewhat obvious in the picture below, where the Ultimaker was used to print the blue head and ear (square blob on the left), ...</p>
 
-      <p>We then sent the 3D model for printing to <a href="https://www.sculpteo.com/">Sculpteo</a> while we dabbled on our side with Orsay's FabLab <a href="https://ultimaker.com/">Ultimaker 2</a>. The difference in resolution is somewhat obvious in the picture below, where the Ultimaker was used to print the blue head and ear (square blob on the left), ...</p>
-      
-      <img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-1.jpg" alt="">
+<img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-1.jpg" alt="">
 
-      <p> ... and Sculpteo sent us the gray model on the right and below.</p>
+<p> ... and Sculpteo sent us the gray model on the right and below.</p>
 
-      <img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-2.jpg" alt="">
+<img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-2.jpg" alt="">
 
-      <p> The scale head was finally fitted onto a stand (plans have been made to print a 3D torso at some point).</p>
+<p> The scale head was finally fitted onto a stand (plans have been made to print a 3D torso at some point).</p>
 
-      <img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-3.jpg" alt="">
+<img class="img-responsive" src="{{ site.baseurl }}/img/sm-3d-print-3.jpg" alt="">
 
 
-      <h3> Fitting the microphones </h3>
+<h3> Fitting the microphones </h3>
 
-      <p> We initially had plans to design our own amplifier, to work with a pair of <a href="https://www.knowles.com/">Knowles</a> microphones. After breaking and burning a few capsules, we went and asked <a href="http://feichter-audio.com/">Feichter Audio</a> for help. They kindly helped us, neatly embedding the circuit into the XLR adapter.</p>
+<p> We initially had plans to design our own amplifier, to work with a pair of <a href="https://www.knowles.com/">Knowles</a> microphones. After breaking and burning a few capsules, we went and asked <a href="http://feichter-audio.com/">Feichter Audio</a> for help. They kindly helped us, neatly embedding the circuit into the XLR adapter.</p>
 
-      <div class="col-xs-12 col-lg-6">
-        <img class="img-responsive" src="{{ site.baseurl }}/img/sm-micro-1.jpg" alt="">
-      </div>
-      <div class="col-xs-12 col-lg-6">
-        <img class="img-responsive" src="{{ site.baseurl }}/img/sm-micro-2.jpg" alt="">
-      </div>
+<div class="col-xs-12 col-lg-6">
+  <img class="img-responsive" src="{{ site.baseurl }}/img/sm-micro-1.jpg" alt="">
+</div>
+<div class="col-xs-12 col-lg-6">
+  <img class="img-responsive" src="{{ site.baseurl }}/img/sm-micro-2.jpg" alt="">
+</div>
 
-      <p> All that remained was to characterize the frequency response of the resulting circuit, to ensure that it would behave on the “scaled” audible spectrum (from 160Hz up to 160kHz).</p>
+<p> All that remained was to characterize the frequency response of the resulting circuit, to ensure that it would behave on the “scaled” audible spectrum (from 160Hz up to 160kHz).</p>
 
-      <img class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-characterization.png" alt="">
-      
-      <p> As can be seen on the picture above, the current characteristic (“in 1, FG” blue curve) limits the overall system to applications below 45kHz (5.6kHz once scaled). As it turned out, the tweeter used for that measurement (Fenton CT25 below) proved to be the limiting factor.</p>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/sm-characterization.png" alt="">
 
-      <div class="col-xs-12">
-        <img style="max-width:500px; width:100%;" class="img-responsive" src="{{ site.baseurl }}/img/sm-fenton-ct25.jpg" alt="">
-      </div>
+<p> As can be seen on the picture above, the current characteristic (“in 1, FG” blue curve) limits the overall system to applications below 45kHz (5.6kHz once scaled). As it turned out, the tweeter used for that measurement (Fenton CT25 below) proved to be the limiting factor.</p>
 
-
-      <h3> Binaural measurements in a scale model </h3>
-
-      <p> The scale head was then fitted with microphones ... </p>
-
-      <img class="img-responsive" src="{{ site.baseurl }}/img/sm-assembly.jpg" alt="">
-
-      <p> ... and used for binaural recordings in the scale model of the <a href="http://www.sinfoniavarsoviacentrum.pl/en/">Sinfonia Varsovia Centrum</a> with <a href="https://kahle.be">Kahle Acoustics</a>.</p>
-
-      <img class="img-responsive" src="{{ site.baseurl }}/img/sm-room.jpg" alt="">
-
-      <p> <i> The Sinfonia Varsovia Centrum was designed by <a href="http://www.thomaspucher.com">Atelier Thomas Pucher</a> (architect) and Müller BBM ( acoustician) for <a href="https://www.sinfoniavarsovia.org/en/">Sinfonia Varsovia</a> and the city of Warsaw. </i></p>
-      
-
-      <h3>Audio Plugin for real-time scale model auralisations</h3>
-      <p> The second objective of this project was to create a plugin that would enable real-time auralisation of scale models. The concept is simple: record a buffer (sound playback or live feed from microphone), increase its playback rate by the factor of your scale model, play it back in the scale model, record it, decrease the playback rate of the resulting buffer by the same factor, and play! The application ... is not so trivial. The result is a neat little plugin called <a href="http://smallroomz.dalembert.upmc.fr/">smallRoomZ</a>. Don't let me fool you, Peter Stitt from <a href="https://www.ssa-plugins.com/">SSA Plugins</a> is the one who did all the work here :).</p>
-
-      <h4>smallRoomZ plugin demo</h4>
-      <div class="embed-responsive embed-responsive-16by9 ">
-        <iframe src="https://www.youtube.com/embed/fjQ66804kSA?si=IBibBAyyZZXhefc2" frameborder="0" allowfullscreen></iframe>
-      </div>
+<div class="col-xs-12">
+  <img style="max-width:500px; width:100%;" class="img-responsive" src="{{ site.baseurl }}/img/sm-fenton-ct25.jpg" alt="">
+</div>
 
 
+<h3> Binaural measurements in a scale model </h3>
 
-    </div>
-  </div>
-</section>
+<p> The scale head was then fitted with microphones ... </p>
+
+<img class="img-responsive" src="{{ site.baseurl }}/img/sm-assembly.jpg" alt="">
+
+<p> ... and used for binaural recordings in the scale model of the <a href="http://www.sinfoniavarsoviacentrum.pl/en/">Sinfonia Varsovia Centrum</a> with <a href="https://kahle.be">Kahle Acoustics</a>.</p>
+
+<img class="img-responsive" src="{{ site.baseurl }}/img/sm-room.jpg" alt="">
+
+<p> <i> The Sinfonia Varsovia Centrum was designed by <a href="http://www.thomaspucher.com">Atelier Thomas Pucher</a> (architect) and Müller BBM ( acoustician) for <a href="https://www.sinfoniavarsovia.org/en/">Sinfonia Varsovia</a> and the city of Warsaw. </i></p>
+
+
+<h3>Audio Plugin for real-time scale model auralisations</h3>
+<p> The second objective of this project was to create a plugin that would enable real-time auralisation of scale models. The concept is simple: record a buffer (sound playback or live feed from microphone), increase its playback rate by the factor of your scale model, play it back in the scale model, record it, decrease the playback rate of the resulting buffer by the same factor, and play! The application ... is not so trivial. The result is a neat little plugin called <a href="http://smallroomz.dalembert.upmc.fr/">smallRoomZ</a>. Don't let me fool you, Peter Stitt from <a href="https://www.ssa-plugins.com/">SSA Plugins</a> is the one who did all the work here :).</p>
+
+<h4>smallRoomZ plugin demo</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/fjQ66804kSA?si=IBibBAyyZZXhefc2" frameborder="0" allowfullscreen></iframe>
+</div>

@@ -15,6 +15,8 @@ window.onscroll = function() {
 
 // shuffle panels on home page
 var myList = document.querySelector('#panels-list');
-for (var i = myList.children.length; i >= 0; i--) {
-    myList.appendChild(myList.children[Math.random() * i | 0]);
+if( myList !== null) {
+  for (var i = myList.children.length; i >= 0; i--) {
+      myList.appendChild(myList.children[Math.random() * i | 0]);
+  }
 }
