@@ -13,10 +13,10 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
-// shuffle panels on home page
-var myList = document.querySelector('#panels-list');
-if( myList !== null) {
-  for (var i = myList.children.length; i >= 0; i--) {
-      myList.appendChild(myList.children[Math.random() * i | 0]);
-  }
-}
+// // shuffle panels on home page
+// var myList = document.querySelector('#panels-list');
+// if( myList !== null) {
+//   for (var i = myList.children.length; i >= 0; i--) {
+//       myList.appendChild(myList.children[Math.random() * i | 0]);
+//   }
+// }
