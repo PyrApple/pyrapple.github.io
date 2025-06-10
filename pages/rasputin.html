@@ -17,10 +17,10 @@ thumbnail: ra-thumbnail.jpg
 <p>The targeted navigation scenarios were large spaces such as museum or city halls. To test workflows and identify the acoustic cues blind people relied on during navigation, we started small however. We thus selected a range of archetypical interior navigation scenarios (corridor, intersection, etc.) for the first recording campaign, measuring RIRs along predetermined navigation paths.</p>
 
 <div class="row no-gutters">
-<div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+<div class="col-sm-6 col-xs-12">
   <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-small-2b.png" alt="">
 </div>
-<div class="col-sm-6 col-sm-offset-0 hidden-xs">
+<div class="col-sm-6 col-xs-12">
   <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-small-2a.png" alt="">
 </div>
 </div>
@@ -41,13 +41,13 @@ thumbnail: ra-thumbnail.jpg
 <p>In each building, we conducted RIR measurement and ambience recording campaigns to be able to generate various auralisation scenarios. Highlighted in yellow below are the areas covered during these campaigns.</p>
 
 <div class="row no-gutters">
-  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+  <div class="col-lg-4 col-sm-6 col-xs-12">
     <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2a.jpg" alt="">
   </div>
-  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+  <div class="col-lg-4 col-sm-6 col-xs-12">
     <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2b.jpg" alt="">
   </div>
-  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
     <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2c.jpg" alt="">
   </div>
 </div>
@@ -93,6 +93,7 @@ thumbnail: ra-thumbnail.jpg
 
 <p>We still needed an intuitive interface for blind users to explore our scenarios and get the most out of the auralisations. We explored two main approaches: first-person exploration in VR and augmented tactile maps. To prototype the VR exploration, we built a few procedural mazes to test user locomotion and obstacle detection.</p>
 
+<h4>Example procedural maze with sound zones</h4>
 <div class="row no-gutters">
   <div class="col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
     <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-virtual-maze.jpg" alt="">
@@ -101,21 +102,21 @@ thumbnail: ra-thumbnail.jpg
 
 <p>While we did find some strategies that worked, it quickly became obvious that first-person exploration wasn’t ideal during the initial exploration phase. Just like sighted users often consult a street map before dropping into street view to plan the last stretch of a route, blind users were far quicker at grasping a layout from a high-level perspective, i.e. using a tactile map.</p>
 
-<h4>Example exploration with an early VR interface prototype</h4>
+<h4>Early VR interface exploration</h4>
 <div class="embed-responsive embed-responsive-16by9 ">
   <iframe src="https://www.youtube.com/embed/0R77r6w-8yE?si=rnCnzO5mCYkpmTV6" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <p>Switching to tactile maps, we started with a 3D-printed map augmented by an OptiTrack system. The tracking setup sent the user’s finger positions to a Unity scene, which acted as a scene graph and triggered ambient playback in Max/MSP. It worked well, technically speaking, but was bulky to move and required blind users to come to the lab for testing. Also, the ambiance triggering was far from intuitive as it didn’t provide any tactile feedback to indicate what location was currently active.</p>
 
-<h4>Example exploration with the augmented tactile map v1 (OptiTrack)</h4>
+<h4>Augmented tactile map v1</h4>
 <div class="embed-responsive embed-responsive-16by9 ">
   <iframe src="https://www.youtube.com/embed/w_VbAi0Pvoc?si=kUxsWxzI_xylyAVs" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <p>So we built a v2. Using the same 3D-printed map, a drill, a few buttons, and a Teensy, we designed a new version shaped like a suitcase: portable, and much more intuitive. Users can press buttons at various points to hear different ambient sounds while exploring the map.</p>
 
-
+<h4>Designing augmented tactile map v2</h4>
 <div class="row no-gutters">
 <div class="col-md-6 col-md-offset-0 col-xs-12">
   <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-tactilemap-2a.jpg" alt="">
@@ -127,7 +128,7 @@ thumbnail: ra-thumbnail.jpg
 
 <p>In collaboration with the <a href="https://aveuglesdefrance.org/">Federation des Aveugles de France</a>, we ran a study with this prototype to better understand which types of feedback were most informative during exploration—comparing and combining ambient cues, localized cane taps, and verbal descriptions.</p>
 
-<h4>Example exploration with the augmented tactile map v2 (standalone)</h4>
+<h4>Augmented tactile map v2</h4>
 <div class="embed-responsive embed-responsive-16by9 ">
   <iframe src="https://www.youtube.com/embed/iqdhy5B4cK4?si=0AZIJci2CcPJKokF" frameborder="0" allowfullscreen></iframe>
 </div>
