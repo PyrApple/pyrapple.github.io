@@ -6,3 +6,128 @@ thumbnail: ra-thumbnail.jpg
 ---
 
 <h2 class="text-left"> Rasputin (2018 - 2023) </h2>
+
+<p>The goal of the Rasputin project was to enable blind people to pre-explore places in virtual reality. Much like google maps for interior spaces, the virtual auditory exploration would help to create mental maps used to orientate oneself during navigation in the real building.</p>
+
+<p class="text-center"><a href="https://rasputin.lam.jussieu.fr/doku.php">Project website</a></p>
+
+
+<h3>Measuring the test scenarios</h3>
+
+<p>The targeted navigation scenarios were large spaces such as museum or city halls. To test workflows and identify the acoustic cues blind people relied on during navigation, we started small however. We thus selected a range of archetypical interior navigation scenarios (corridor, intersection, etc.) for the first recording campaign, measuring RIRs along predetermined navigation paths.</p>
+
+<div class="row no-gutters">
+<div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+  <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-small-2b.png" alt="">
+</div>
+<div class="col-sm-6 col-sm-offset-0 hidden-xs">
+  <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-small-2a.png" alt="">
+</div>
+</div>
+
+<p>We did the  measurements using a <a href="https://www.neumann.com/fr-fr/products/microphones/ku-100">Neumann KU-100</a> dummy head for binaural RIRs and an <a href="https://mhacoustics.com/products">EigenMike</a> for 3rd order ambisonic RIRs. We placed small loudspeakers where users feet, cane and hands would be, to be able to auralise footsteps, cane taps and finger snaps. </p>
+
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-small-1.jpg" alt="">
+
+<p>RIRs analysis and listening tests helped us better understand the conditions under which auralisations provided valuable layout information (type of sounds, spatial sampling, interface, etc.). The tests were conducted with a panel of blind people that worked with us during the entire project.</p>
+
+
+<h3>Measuring the final scenarios</h3>
+
+<p>We selected 3 large buildings to serve as sandboxes for auralisation and navigation tests, presenting increasingly challenging navigation layouts: the city halls of Paris 3rd and 20th districts, and the “Cité des sciences et de l'industrie” museum in Paris.</p>
+
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-1.jpg" alt="">
+
+<p>In each building, we conducted RIR measurement and ambience recording campaigns to be able to generate various auralisation scenarios. Highlighted in yellow below are the areas covered during these campaigns.</p>
+
+<div class="row no-gutters">
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2a.jpg" alt="">
+  </div>
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2b.jpg" alt="">
+  </div>
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-2c.jpg" alt="">
+  </div>
+</div>
+
+<p>Beyond RIRs and ambience, we used a LiDAR scanner to aggregate a point cloud of the interior of each building.</p>
+
+<div class="row no-gutters">
+  <div class="col-lg-4 col-sm-6 col-xs-12">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-mairie-3e-pointcloud.jpg" alt="">
+  </div>
+  <div class="col-lg-4 col-sm-6 col-xs-12">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-mairie-xx-pointcloud-2.jpg" alt="">
+  </div>
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-mairie-xx-pointcloud-1.jpg" alt="">
+  </div>
+</div>
+
+
+<p>We then used these point clouds as a basis to create 3D acoustic models of the three buildings.</p>
+
+<div class="row no-gutters">
+  <div class="col-lg-4 col-sm-6 col-xs-12">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-model-1.png" alt="">
+  </div>
+  <div class="col-lg-4 col-sm-6 col-xs-12">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-model-2.png" alt="">
+  </div>
+  <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-scenarios-large-model-3.png" alt="">
+  </div>
+</div>
+
+<p>The plan was to use these models to generate auralisation scenarios with full control on source nature and positions compared to the ambience recordings.</p>
+
+
+<h3>Auralisations</h3>
+
+<p>We tested three different workflows to create auralisations: mixing direct ambisonic recordings, using measured RIRs with convolution, and using simulated RIRs with convolution. Simulating test scenarios was relatively straightforward, but large real-world scenarios proved much more challenging. Pressed for time, we ended up using only the first two workflows for those.</p>
+
+
+<h3>Interface</h3>
+
+<p>We still needed an intuitive interface for blind users to explore our scenarios and get the most out of the auralisations. We explored two main approaches: first-person exploration in VR and augmented tactile maps. To prototype the VR exploration, we built a few procedural mazes to test user locomotion and obstacle detection.</p>
+
+<div class="row no-gutters">
+  <div class="col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
+    <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-virtual-maze.jpg" alt="">
+  </div>
+</div>
+
+<p>While we did find some strategies that worked, it quickly became obvious that first-person exploration wasn’t ideal during the initial exploration phase. Just like sighted users often consult a street map before dropping into street view to plan the last stretch of a route, blind users were far quicker at grasping a layout from a high-level perspective, i.e. using a tactile map.</p>
+
+<h4>Example exploration with an early VR interface prototype</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/0R77r6w-8yE?si=rnCnzO5mCYkpmTV6" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>Switching to tactile maps, we started with a 3D-printed map augmented by an OptiTrack system. The tracking setup sent the user’s finger positions to a Unity scene, which acted as a scene graph and triggered ambient playback in Max/MSP. It worked well, technically speaking, but was bulky to move and required blind users to come to the lab for testing. Also, the ambiance triggering was far from intuitive as it didn’t provide any tactile feedback to indicate what location was currently active.</p>
+
+<h4>Example exploration with the augmented tactile map v1 (OptiTrack)</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/w_VbAi0Pvoc?si=kUxsWxzI_xylyAVs" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>So we built a v2. Using the same 3D-printed map, a drill, a few buttons, and a Teensy, we designed a new version shaped like a suitcase: portable, and much more intuitive. Users can press buttons at various points to hear different ambient sounds while exploring the map.</p>
+
+
+<div class="row no-gutters">
+<div class="col-md-6 col-md-offset-0 col-xs-12">
+  <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-tactilemap-2a.jpg" alt="">
+</div>
+<div class="col-md-6 col-md-offset-0 col-xs-12">
+  <img class="img-responsive borderless" src="{{ site.baseurl }}/img/ra-tactilemap-2b.jpg" alt="">
+</div>
+</div>
+
+<p>In collaboration with the <a href="https://aveuglesdefrance.org/">Federation des Aveugles de France</a>, we ran a study with this prototype to better understand which types of feedback were most informative during exploration—comparing and combining ambient cues, localized cane taps, and verbal descriptions.</p>
+
+<h4>Example exploration with the augmented tactile map v2 (standalone)</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/iqdhy5B4cK4?si=0AZIJci2CcPJKokF" frameborder="0" allowfullscreen></iframe>
+</div>
