@@ -84,6 +84,7 @@ async function fetchHalPublications() {
             if (grouped[type]) {
                 const header = document.createElement('h3');
                 header.textContent = publicationHeaders[type] || type;
+                header.classList.add('header-publication');
                 // const headerStr = publicationHeaders[type] || type;
                 // header.innerHTML = `<strong>${headerStr}</strong>`;
                 list.appendChild(header);
@@ -95,7 +96,7 @@ async function fetchHalPublications() {
                     li.classList.add('li-publication');
                     const id = pub.label_s.indexOf("&#x27E8;hal-");
                     const cleanLabel = pub.label_s.substring(0, id-1);
-                    li.innerHTML = `${cleanLabel} (<a href="${pub.uri_s}" target="_blank">url</a>)`;
+                    li.innerHTML = `${cleanLabel} <a href="${pub.uri_s}" target="_blank"> <i class="far fa-file-alt"></i> </a>`;
                     ul.appendChild(li);
 
                 });
