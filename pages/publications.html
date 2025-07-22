@@ -26,7 +26,7 @@ async function fetchHalPublications() {
 
     // define hal api related fields
     const halId = 'david-poirier-quinot';
-    const apiUrl = `https://api.archives-ouvertes.fr/search/?q=authIdHal_s:${halId}&fl=docid,label_s,docType_s,producedDateY_i,uri_s&wt=json&sort=producedDate_tdate desc`;
+    const apiUrl = `https://api.archives-ouvertes.fr/search/?q=authIdHal_s:${halId}&rows=1000&fl=docid,label_s,docType_s,producedDateY_i,uri_s&wt=json&sort=producedDate_tdate desc`; // default (withou &rows=100 is 30)
 
     try
     {
@@ -82,7 +82,10 @@ async function fetchHalPublications() {
         list.innerHTML = '';
 
         publicationTypes.forEach(type => {
+
             if (grouped[type]) {
+
+                // add section header
                 const header = document.createElement('h3');
                 header.textContent = publicationHeaders[type] || type;
                 header.classList.add('header-publication');
@@ -93,10 +96,13 @@ async function fetchHalPublications() {
                 const ul = document.createElement('ul');
                 grouped[type].forEach(pub => {
 
+
+
                     const li = document.createElement('li');
                     li.classList.add('li-publication');
                     const id = pub.label_s.indexOf("&#x27E8;hal-");
-                    const cleanLabel = pub.label_s.substring(0, id-1);
+                    // const cleanLabel = pub.label_s.substring(0, id-1);
+                    const cleanLabel = pub.label_s;
                     li.innerHTML = `${cleanLabel} <a href="${pub.uri_s}" target="_blank"> <i class="far fa-file-alt"></i> </a>`;
                     ul.appendChild(li);
 
