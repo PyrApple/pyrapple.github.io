@@ -6,3 +6,127 @@ thumbnail: lo-thumbnail.jpg
 ---
 
 <h2>Louvre (2023)</h2>
+
+<p>At the core of the Louvre project was an immersive auralisation of the Napoleon Hall, the large underground reception area beneath the Louvre pyramid. The project combined field recordings, virtual modelling, and spatial audio to support acoustic design decisions in a sensitive heritage environment.</p>
+
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-header.jpg" alt="">
+
+
+<h3>Setting the scene</h3>
+
+<p>Napoleon Hall, though visually striking, suffers acoustically when crowded. Visitor noise levels often reach disruptive thresholds, making the space challenging for both staff and guests. Our goal was to propose and evaluate acoustic treatments that would improve the experience without compromising the hall’s architectural integrity, a delicate balance given the space’s iconic status.</p>
+
+
+<h3>On-site measurements</h3>
+
+<p>We started with an extensive field campaign. During opening hours, we recorded typical ambience using ambisonic microphones at four key positions: entrances, centre, and near the reception desk.</p>
+
+<h4>Ambience recording session</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-hall.jpg" alt="">
+
+<audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ambiance-meas.mp3" type="audio/wav"></audio>
+
+<p>In the figure below, R<sub>Ai</sub> are 1st order ambisonic microphones used for ambiences. R<sub>Oi</sub> and S<sub>i</sub> are omnidirectional microphone and source positions used during the RIR recording session.</p>
+
+<h4>Ambience and RIR recording sessions + SPL in the Hall during the day</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-measure.jpg" alt="">
+
+<p>At night, with the escalators and ventilation system shut down, we captured impulse responses using a sine sweep method, along with background noise levels. This dataset would serve as the ground truth for calibration.</p>
+
+<h4>RIR measurement session</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-meas-night.jpg" alt="">
+<audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ir-meas.mp3" type="audio/wav"></audio>
+
+
+
+<h3>Building the acoustic model</h3>
+
+<p>Back in the lab, we created a 3D model of the hall in Blender, simplifying architectural drawings into a low-poly mesh compatible with CATT-Acoustic. Each surface was matched with material properties derived from field observations. We then calibrated: iterating absorption and diffusion values until the simulated T20 and C80 metrics aligned within perceptual thresholds of the measurements.</p>
+
+<h4>Acoustic model and simulated source/receiver positions</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-model-ac.jpg" alt="">
+
+
+<!--
+<div class="row no-gutters">
+<div class="col-sm-6">
+  <h4>Reference</h4>
+  <audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ir-meas.mp3" type="audio/wav"></audio>
+</div>
+<div class="col-sm-6">
+  <h4>Simulation</h4>
+  <audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ir-sim.mp3" type="audio/wav"></audio>
+</div>
+</div>
+-->
+
+<h3>Treatment scenarios</h3>
+
+<p>We evaluated three main treatment strategies, plus the untreated baseline. These were visualised in the 3D model using yellow highlights to denote modified surfaces.</p>
+
+<h4>Visual rendering of acoustic treatments</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-ac-conditions.jpg" alt="">
+
+<ul style="list-style-type: none;">
+<li>A<sub>ref.</sub>: the current untreated state.</li>
+<li>A<sub>part.</sub>: partial coverage with acoustical plaster on non-accessible concrete surfaces.</li>
+<li>A<sub>full</sub>: full surface treatment including micro-perforated film on the glass pyramid.</li>
+<li>A<sub>art</sub>: an alternative approach using acoustic lighting, a central art piece, and wooden bleachers.</li>
+</ul>
+
+<h4>Acoustic parameter estimations on simulated RIRs, comparison with measured RIR</h4>
+<div class="row no-gutters">
+<div class="col-sm-6">
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-ac-param-t20.jpg"  alt="">
+</div>
+<div class="col-sm-6">
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-ac-param-c80.jpg"  alt="">
+</div>
+</div>
+
+
+<h3>Rendering the experience</h3>
+
+<p>To explore the impact of these treatments, we developed 360° auralisations. For each treatment, we simulated 96 RIRs, convolved them with dry speech, crowd, and background sources, and rendered the results as second-order ambisonics.</p>
+
+<h4>Raw RIR auralisation (binaural)</h4>
+<audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-claves.mp3" type="audio/wav"></audio>
+
+<div class="row no-gutters">
+<div class="col-sm-6">
+  <h4>Ambience auralisation: recording (binaural)</h4>
+  <audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ambiance-meas.mp3" type="audio/wav"></audio>
+</div>
+<div class="col-sm-6">
+  <h4>Ambience auralisation: simulation (binaural)</h4>
+  <audio class="" controls preload="none"><source src="{{ site.baseurl }}/sounds/lo-ambiance-sim.mp3" type="audio/wav"></audio>
+</div>
+</div>
+
+<p>The auralisations were paired with panoramic images rendered in Blender. The virtual scenes were populated with procedural crowds, matched in density to real conditions.</p>
+
+<h4>360° reference photo</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-visual-photo.jpg"  alt="">
+<h4>360° rendered image</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-visual-render.jpg"  alt="">
+
+
+<h3>VR application</h3>
+
+<p>The final step was to wrap everything into a VR application, built in Unity, running on a Quest 3.</p>
+
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/lo-application.jpg"  alt="">
+
+<p>Each position showcased a different treatment, allowing users to switch between soundscapes: crowd noise, announcements, or both. A 360° banner on the lower part of the screen showed which treatment was active at all times.</p>
+
+<h4>Louvre auralisation VR application</h4>
+<div class="embed-responsive embed-responsive-16by9 ">
+  <iframe src="https://www.youtube.com/embed/wKBWVgQYg_c?si=ObpudQ9OhQ1yg7xU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h3>Demo day</h3>
+
+<p>At the end of the project, a delegation from the Louvre visited the lab. Demos began with a playback of the Hall’s ambience recordings to refocus on the problem, followed by the simulated soundscapes on the same 3rd-order ambisonic setup to validate their realism. Then came the VR tests: each visitor explored the acoustic treatments firsthand before sitting down to discuss which option to move forward with.</p>
+
+
