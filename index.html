@@ -24,6 +24,7 @@ layout: default
 
                 {% for page in sortedPages %}
                 {% if page.thumbnail %}
+                {% unless page.hidden %}
 
                 <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 card">
                 <a href="{{ page.url | prepend: site.baseurl }}" class="index-anchor">
@@ -45,6 +46,7 @@ layout: default
 
                 </div>
 
+                {% endunless %}
                 {% endif %}
                 {% endfor %}
 
