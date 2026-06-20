@@ -13,16 +13,16 @@ layout: default
         <div class="col-lg-12 col-lg-offset-0 text-center">
 
             <h1 class="section-heading text-center no-margin-bottom">Acoustics and Mixed Realities</h1>
-            <h2 class="text-center">Research and Development</h2>
+            <h2 class="text-center">Research and Developments</h2>
 
             <br> <br>
 
             <div id="panels-list" class="row pack">
                 
-                <!-- alphabetical order -->
-                {% assign sortedPages = site.pages | sort:'title' %}
+                <!-- loop over pages, sorted by decreasing year -->
+                {% assign sortedPages = site.projects | sort:'year' %}
 
-                {% for page in sortedPages %}
+                {% for page in sortedPages reversed %}
                 {% if page.thumbnail %}
                 {% unless page.hidden %}
 
@@ -33,7 +33,7 @@ layout: default
                       <img class="panel-img" src="{{site.baseurl}}/img/{{page.thumbnail}}" alt="{{post.title}}">
 
                       <div class="panel-body">
-                        <h3 class="panel-title">{{ page.title | truncate: 25 }}</h3>
+                        <h3 class="panel-title">{{ page.title | truncate: 34 }}</h3>
 
                         <p class = "text-left" style="margin-bottom:0;" ><small>
                         <!-- {{ post.description | strip_html | strip_newlines | truncate: 57 }} -->

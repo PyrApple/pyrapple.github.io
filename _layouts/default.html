@@ -4,9 +4,16 @@
 {% include head.html %}
 
 <body id="default-body">
+
   {% include nav-bar.html %}
 
   <div class="container text-justify root-div">
+
+  {% if page.year %}
+    <h2>{{page.title}} ({{page.year}})</h2>
+  {% else %}
+    <h2>{{page.title}}</h2>
+  {% endif %}
 
   {{ content }}
 
@@ -15,6 +22,7 @@
   {% include footer.html %}
 
   {% include scripts.html %}
+
 </body>
 
 </html>

@@ -10,3 +10,6 @@ _site
 
 # ignore platform specific files
 *.DS_Store
+
+# ignore unused images
+img/_unused/

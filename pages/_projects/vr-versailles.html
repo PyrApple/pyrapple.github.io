@@ -1,0 +1,106 @@
+---
+layout: default
+title: Virtual Rehearsal - Versailles
+year: 2019
+description: Real-time auralization to study the impact of room acoustics on musical performance.
+thumbnail: vv-thumbnail.jpg
+---
+
+<p>This project was one of the first virtual rehearsal studies I participated in. Conducted within the <a href="https://evaa.lam.jussieu.fr/doku.php">EVAA project</a>, it explored how room acoustics influence musical interpretation. The focus was on historically informed baroque performance, comparing musicians' reactions in historical and modern concert spaces, both real and virtual.</p>
+
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-ads-render-2.jpg" alt="">
+
+<h3>Concept</h3>
+
+<p>The study compared performances recorded in two real rooms and in their virtual counterparts. By analysing timing, articulation, vibrato, dynamics, and other musical features, we investigated whether musicians adapted their playing to the acoustic environment.</p>
+
+<p>Two questions motivated the work. First, do musicians react similarly in a real room and its virtual reproduction? Second, how strongly does the acoustic character of a room influence interpretation? Together, these questions address the ecological validity of virtual rehearsal environments.</p>
+
+<h4>Musicians rehearsing in Versailles and its virtual reproduction</h4>
+
+<div class="row no-gutters">
+<div class="col-sm-6">
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-rehearse-real2.jpg" alt="">
+</div>
+<div class="col-sm-6">
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-rehearse-virtual2.jpg" alt="">
+</div>
+</div>
+
+<h3>Selected Rooms</h3>
+
+<p>Two contrasting venues were selected. The Salon des Nobles de la Reine in Versailles represents the type of space for which much of the studied repertoire was originally written. The Cité de la Musique auditorium in Paris, on the other hand, provides a modern concert environment with very different acoustical characteristics.</p>
+
+<h4>Salon des Nobles de la Reine, Versailles</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-sdn.jpg" alt="">
+
+<h4>Cité de la Musique, Paris</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-cm.jpg" alt="">
+
+<h4>Musicians rehearsing in The Cité de la Musique auditorium and its virtual reproduction</h4>
+
+<div class="row no-gutters">
+<div class="col-sm-6">
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-rehearse-real.jpg" alt="">
+</div>
+<div class="col-sm-6">
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-rehearse-virtual.jpg" alt="">
+</div>
+</div>
+
+<h3>Auralisation</h3>
+
+<p>The virtual acoustics were reproduced using real-time convolution with ambisonic room impulse responses simulated in CATT-Acoustic/TUCT. The acoustic models were calibrated using measurements carried out in the real rooms.</p>
+
+<p>The direct sound component was removed from the simulated responses, as it was naturally produced by the musicians themselves. The reverberant field was rendered over a 32-loudspeaker array surrounding the performers after decoding from ambisonics.</p>
+
+<p>Instrument position and orientation were tracked throughout the performance. This information was used to adapt the auralisation in real time according to the directivity of each instrument. Under the hood, the system relied on a set of pre-simulated acoustic responses corresponding to different source radiation patterns. A custom plugin developed by our team combined these responses after convolution to recreate the directional behaviour of the instrument within the virtual room.</p>
+
+<h4>CATT acoustic lobe model and directivity recomposition workflow</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/vv-catt-lobes.png" alt="">
+
+<h3>Visual Environment</h3>
+
+<p>The virtual rehearsals took place in MocapVR, the laboratory's immersive performance space.</p>
+
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-mocapvr.jpg" alt="">
+
+<p>We deliberately avoided head-mounted displays so that musicians could see their instruments, read scores, and interact naturally with one another. At the same time, we believed that visual context would help create rehearsal conditions closer to those of the real venues.</p>
+
+<p>To achieve this, we built a small CAVE-like projection system composed of four projection surfaces surrounding the performers. A single projector illuminated the entire structure, while a custom rendering pipeline handled image warping and perspective correction.</p>
+
+<h4>CAD of the screen rig</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/vv-mocapvr-screen-rig.jpg" alt="">
+
+<h4>Screens mounted on the final rig</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-mocapvr-with-screen-real.jpg" alt="">
+
+<h4>CAD of the projection setup</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-mocapvr-with-screen-vr.jpg" alt="">
+
+<p>Using an OptiTrack system, the rendered viewpoint continuously adapted to the tracked musician position, creating the illusion of looking through a window into the virtual venue. The system was based on a modified version of the <a href="https://widve.github.io/UniCAVE/">UniCAVE</a> Unity framework combined with projection techniques originally explored during the <a href="{{ site.baseurl }}/pages/blendervr.html">BlenderVR</a> project.</p>
+
+<h4>UniCAVE proxy projection scene (foreground) and rendered scene (background)</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/vv-unicave-concept.png" alt="">
+
+<h4>Final adaptive visual rendering in MocapVR</h4>
+
+<div class="embed-responsive embed-responsive-16by9 ">
+<iframe src="https://www.youtube.com/embed/jq2tZBPyKGE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3>Results</h3>
+
+<p>I only participated in the preliminary prototyping and pilot studies. For details on the final experimental protocol and results, see:</p>
+
+<p>Eley, N., Lavandier, C., Psychoyou, T., & Katz, B. F. (2024). <i>Listener perception of changes in historically informed performance of solo baroque music due to room acoustics</i>. Acta Acustica, 8, 6. (<a href="https://doi.org/10.1051/aacus/2023069">DOI</a>).</p>
+
+<h3>Misc.</h3>
+
+<p>As part of the project, students from the "Patrimoine, Visualisation et Modélisation 3D" programme at Cergy Paris Université created a visual reconstruction of musicians performing in the Salon des Nobles. It deserves a place here.</p>
+
+<h4>Virtual rehearsal in the Salon des Nobles de la Reine (animated short)</h4>
+
+<div class="embed-responsive embed-responsive-16by9 ">
+<iframe src="https://www.youtube.com/embed/ZuzjzkTnv9s" frameborder="0" allowfullscreen></iframe>
+</div>

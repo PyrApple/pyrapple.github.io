@@ -22,38 +22,29 @@
                 <li class="dropdown">
                     <a href="" class="page-scroll dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
                     <ul class="dropdown-menu" style="right: auto; left: auto;">
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/3dti.html">3D Tune-In</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/anaglyph.html">Anaglyph</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/blendervr.html">BlenderVR</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/cloud-theatre.html">Cloud Theatre</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/cosima.html">CoSiMa</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/evaa.html">Evaa</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/evertims.html">Evertims</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/ghost-orchestra.html">Ghost Orchestra</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/glass-house.html">Glass House</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/louvre.html">Louvre</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/oculus-project.html">Oculus Project</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/phd-thesis.html">PhD</a></li>
-                        <!-- <li><a class="navbar-link" href="{{ site.baseurl }}/pages/phend.html">Phend</a></li> -->
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/rasputin.html">Rasputin</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/roomz.html">RoomZ</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/scale-models.html">Scale Models</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/small-devs.html">Small Devs</a></li>
-                        <!-- <li><a class="navbar-link" href="{{ site.baseurl }}/pages/sonicom.html">Sonicom</a></li> -->
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/soundscape-interaction.html">SoundScape Interaction</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/square.html">Square</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/tout-un-monde.html">Tout un Monde</a></li>
+
+                         <!-- loop over pages, sorted by decreasing year -->
+                        {% assign sortedPages = site.projects | sort:'year' %}
+
+                        {% for page in sortedPages reversed %}
+                        {% unless page.hidden %}
+
+                        <li><a class="navbar-link" href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
+
+                        {% endunless %}
+                        {% endfor %}
+
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="" class="page-scroll dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others</a>
                     <ul class="dropdown-menu" style="right: 0; left: auto;">
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/small-devs.html">Small Devs</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/teaching.html">Teaching</a></li>
-                        <li><a class="navbar-link" href="{{ site.baseurl }}/pages/roaming-the-web.html">Roaming the Web</a></li>
-                        <!-- <li><a href="{{ site.baseurl }}/pages/music.html">Music</a></li> -->
-                        <!-- <li><a href="{{ site.baseurl }}/pages/satin-coco.html">Satin Coco</a></li> -->
+
+                        {% for page in site.others %}
+                        <li><a class="navbar-link" href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
+                        {% endfor %}
+
                     </ul>
                 </li>
 
