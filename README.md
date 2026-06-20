@@ -35,6 +35,7 @@
 
 * vendor: local ruby gem installs, created by bundler (can be seen as an equivalent of node_packages or virtual env local pip folder)
 
+
 ## Typical install steps
 
 to build a new website like this one from scratch
@@ -42,8 +43,8 @@ to build a new website like this one from scratch
 ```
 # general install of ruby, to avoid conflicts with the one shipped with osx
 brew install ruby
-# you'll have to add precedent for the new /usr/local ruby path over osx's after this step
 
+# you'll have to add precedent for the new /usr/local ruby path over osx's after this step
 
 # install bundler, equivalent of virtual env for ruby asa I understood
 gem install bundler
@@ -88,7 +89,6 @@ Once jekyll installed as suggested in the previous section, use the following co
 ```bash
 bundle exec jekyll serve --baseurl '' --host=192.168.0.41
 ```
-
 
 ### Check for broken links
 
