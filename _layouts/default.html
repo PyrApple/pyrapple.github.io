@@ -11,7 +11,7 @@
 
   {% if page.year %}
     <h2>{{page.title}} ({{page.year}})</h2>
-  {% else %}
+  {% elsif page.title %}
     <h2>{{page.title}}</h2>
   {% endif %}
 
