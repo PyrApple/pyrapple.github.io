@@ -2,8 +2,87 @@
 layout: default
 title: Mémoire Vive
 year: 2026
-description: ...
+description: Can good storytelling make imperfect mixed reality believable?
 thumbnail: mv-thumbnail.jpg
-hidden: true
+hidden: false
 ---
 
+<p>Most mixed reality experiences try to convince you that what you see is real. This project explored the opposite question: could we deliberately embrace imperfect technology, and still create a believable experience through careful staging and spatial audio?</p>
+
+<p>Mémoire Vive was developed during Raphaël Revault's six-month internship from <a href="https://www.ens-louis-lumiere.fr/">ENS Louis-Lumière</a>. Rather than starting from a predefined technical solution, we approached it as a small research project. Raphaël implemented the successive prototypes while I helped define the scenario, evaluate different technical approaches, and steer the project toward what eventually became a narrative AR fiction about trust engineering.</p>
+
+<div class="embed-responsive embed-responsive-16by9 ">
+<iframe src="https://www.youtube.com/embed/6fO0HEjqjHE?si=QlZXIgxonlv_DkqR" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h3>Can you trust the machine?</h3>
+
+<p>Participants were welcomed into what appeared to be a research laboratory. They were told they would test a prototype capable of reconstructing sounds from their recent auditory memories. Of course, the machine did nothing of the sort. The interesting part was whether participants would eventually believe that it did.</p>
+
+<p>Rather than trying to convince participants that the system was perfect, we first convinced them that it was imperfect. The earliest sound reconstructions were unstable, distorted and poorly spatialised, suggesting an experimental system that almost worked, but not quite. Lowering expectations turned out to be much easier than trying to exceed them.</p>
+
+
+<h3>Building trust</h3>
+
+<p>As the experiment progressed, the reconstructed sounds became richer and more convincing. A metronome started ticking. A radio appeared to play in the corner. A fan slowly came to life. Conversations could be heard through nearby walls. The trick was that none of these objects actually existed. They were all prerecorded ambisonic recordings made beforehand in the very same room, played back through open headphones while participants still perceived the real space around them.</p>
+
+<h4>Recording setup</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-recordings.jpg" alt="">
+
+<p>The room itself became part of the illusion. Before the experiment, we scanned it using the Quest's built-in reconstruction tools. During the experience, only part of the room remained visible through passthrough, while the rest was gradually replaced by a simplified voxel version of itself.</p>
+
+<h4>Scanning the room before the experiment</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-room-scan.jpg" alt="">
+
+<h4>Physical room gradually blending into its virtual reconstruction</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-room-transition.jpg" alt="">
+
+
+<h3>A very cooperative experimenter</h3>
+
+<p>The experimenter also played an important role in maintaining the illusion. At first, participants interacted with a real person moving naturally around the room. As the experiment progressed, he repeatedly crossed the boundary between the physical and reconstructed parts of the environment until participants naturally accepted seeing him on both sides.</p>
+
+<h4>Experimenter and participant interacting during the experiment</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-participant.jpg" alt="">
+
+<p>At one carefully chosen moment, the real experimenter quietly left the room. From the participant's point of view, however, nothing happened. A pre-recorded avatar immediately took over, continuing the exact same movement and audio sequence from the position where the real experimenter had disappeared.</p>
+
+<h4>Experimenter avatar</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-avatar.jpg" alt="">
+
+<p>Interestingly, we quickly discovered that highly realistic avatars were unnecessary. After experimenting with several approaches, a minimal floating mask and tracked hands proved just as convincing once participants had already accepted the rules of the experience.</p>
+
+
+<h3>Keeping one foot in reality</h3>
+
+<p>The project deliberately avoided isolating participants from the real world. Conventional headphones, even relatively open ones, immediately weakened the illusion by separating listeners from their surroundings. Instead, we used the unusual AKG K1000 headphones, whose loudspeaker-like design preserves much of the natural sound field.</p>
+
+<h4>Participant's hands blending between real and virtual</h4>
+<img class="img-responsive" src="{{ site.baseurl }}/img/mv-hands-transition.jpg" alt="">
+
+<p>Likewise, participants could always see parts of their real body, touch real furniture, and observe the physical room through passthrough. The virtual environment therefore never replaced reality entirely—it quietly grew around it.</p>
+
+
+<h3>Finding the right balance</h3>
+
+<p>The project evolved through many small iterations rather than one grand design. Most weeks followed roughly the same pattern: Raphaël would implement a new feature, we would spend an afternoon trying to break it, discussing why something worked—or didn't—and the next iteration usually emerged from those conversations.</p>
+
+<p>Surprisingly, we spent less time improving rendering quality than asking a much simpler question: what are participants actually paying attention to? That question shaped many design decisions, from the simplified avatar to the voxel reconstruction of the room and the intentionally imperfect first sound reconstructions. Every element had to feel coherent with the fictional machine participants believed they were testing.</p>
+
+<h4>Final storyboard</h4>
+<img class="img-responsive borderless" src="{{ site.baseurl }}/img/mv-storyboard.jpg" alt="">
+
+<h3>Did it work?</h3>
+
+<p>The prototype was evaluated with six participants. The results were encouraging. Several participants believed that virtual objects such as the radio had been physically present in the room. Others remained uncertain whether the experimenter had actually left after the transition to the virtual avatar, and some even attempted to continue interacting with the pre-recorded character.</p>
+
+<div class="row no-gutters">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+<img class="img-responsive borderless"
+     src="{{ site.baseurl }}/img/mv-results.png"
+     alt="">
+</div>
+</div>
+
+<p>The experience concluded with an apparent malfunction. The virtual reconstruction abruptly disappeared, leaving participants alone in a silent, mostly empty room. Only then did many realise how many of the sounds and objects they had gradually accepted as real had never existed in the first place.</p>
