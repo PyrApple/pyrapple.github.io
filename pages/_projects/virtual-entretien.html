@@ -1,15 +1,14 @@
 ---
-layout: default
 title: Voice Auralisation in XR
 year: 2025
 description: Acoustic rendering for realistic interactions in mixed realities.
 thumbnail: ve-thumbnail.jpg2
-hidden: true
+published: false
 ---
 
 <p>This page gathers three studies conducted during <a href="https://www.pabloabeh.com">Pablo Abehsera Morell</a>'s PhD thesis, “Acoustic Rendering for Realistic Interactions in Mixed Realities”, defended in January 2026. The work was carried out in the context of the <a href="https://www.sonicom.eu/">Sonicom</a> project.</p>
 
-<img class="img-responsive" src="{{ site.baseurl }}/img/ve-directivity-meas.jpg" alt="">
+<img src="{{ site.baseurl }}/img/ve-directivity-meas.jpg" alt="">
 
 <p>In face-to-face conversations, our voice radiates differently depending on the direction we face. When virtual humans become part of everyday mixed-reality communication, should these effects also be reproduced? And if so, how accurately do we need to do it before the interaction starts feeling natural?</p>
 
@@ -24,15 +23,15 @@ hidden: true
 <p class="text-center"><a href="https://hal.science/hal-04188953">associated paper</a></p>
 
 <h4>RIR measurement setups in the three rooms (studio, conference room, amphitheatre)</h4>
-<div class="row no-gutters">
+<div class="row">
   <div class="col-md-4">
-    <img class="img-responsive" src="{{ site.baseurl }}/img/ve-dirswap-studio.jpg" alt="">
+    <img src="{{ site.baseurl }}/img/ve-dirswap-studio.jpg" alt="">
   </div>
   <div class="col-md-4">
-    <img class="img-responsive" src="{{ site.baseurl }}/img/ve-dirswap-library.jpg" alt="">
+    <img src="{{ site.baseurl }}/img/ve-dirswap-library.jpg" alt="">
   </div>
   <div class="col-md-4">
-    <img class="img-responsive" src="{{ site.baseurl }}/img/ve-dirswap-amphi.jpg" alt="">
+    <img src="{{ site.baseurl }}/img/ve-dirswap-amphi.jpg" alt="">
   </div>
 </div>
 
@@ -41,33 +40,33 @@ hidden: true
 <p>The method worked by splitting the impulse response into time regions — direct sound, early reflections, and late reverberation — and applying frequency-dependent gain changes to each region. In short: keep the room measurement, but bend it so that it reacts as if the source had turned.</p>
 
 <h4>Directivity projection principle</h4>
-<img style="max-width: 550px; width:100%;" class="img-responsive borderless" src="{{ site.baseurl }}/img/ve-dirswap-algo.jpg" alt="">
+<img style="max-width: 550px; width:100%;" class="borderless" src="{{ site.baseurl }}/img/ve-dirswap-algo.jpg" alt="">
 
-<div class="row no-gutters">
+<div class="row">
   <div class="col-sm-6">
     <h4>Measured rotating impulse response</h5>
-    <audio class="" controls preload="none">
+    <audio controls preload="none">
       <source src="{{ site.baseurl }}/sounds/ve-dirswap-spg-impulse-meas.mp3" type="audio/mp3">
     </audio>
   </div>
   <div class="col-sm-6">
     <h4>Reconstructed rotating impulse response</h5>
-    <audio class="" controls preload="none">
+    <audio controls preload="none">
       <source src="{{ site.baseurl }}/sounds/ve-dirswap-spg-impulse-reconstructed40ms.mp3" type="audio/mp3">
     </audio>
   </div>
 </div>
 
-<div class="row no-gutters">
+<div class="row">
   <div class="col-sm-6">
     <h4>Voice auralisation with measured IRs</h5>
-    <audio class="" controls preload="none">
+    <audio controls preload="none">
       <source src="{{ site.baseurl }}/sounds/ve-dirswap-spg-voice-meas.mp3" type="audio/mp3">
     </audio>
   </div>
   <div class="col-sm-6">
     <h4>Voice auralisation with reconstructed IRs</h5>
-    <audio class="" controls preload="none">
+    <audio controls preload="none">
       <source src="{{ site.baseurl }}/sounds/ve-dirswap-spg-voice-reconstructed40ms.mp3" type="audio/mp3">
     </audio>
   </div>
@@ -87,7 +86,7 @@ hidden: true
 <p>For this, we needed a person speaking and rotating in a virtual room. So we recorded ourselves in front of a green screen, speaking, singing, whistling, shouting, and generally doing the kind of things one does when trying to stress-test an auralisation system.</p>
 
 <h4>Green-screen recording session</h4>
-<img class="img-responsive borderless" src="{{ site.baseurl }}/img/ve-thumbnail.jpg" alt="">
+<img class="borderless" src="{{ site.baseurl }}/img/ve-thumbnail.jpg" alt="">
 
 <p>The same 360° camera was then used to capture the target room. After removing the green screen from the videos, the recorded speakers were composited into the room panorama. Once displayed in a Quest headset, participants saw what looked like a 360° video of someone talking in front of them.</p>
 
@@ -99,7 +98,7 @@ hidden: true
 <p>On the audio side, we used binaural room impulse responses measured with a rotating Genelec loudspeaker placed where the virtual speaker would appear. Several auralisation strategies were then compared: one with the full measured orientation-dependent reverberation, one where only the direct sound followed the speaker orientation, and simplified versions where the reverberation was static or intentionally mismatched.</p>
 
 <h4>Participant view inside the Quest headset</h4>
-<img class="img-responsive borderless" src="{{ site.baseurl }}/img/so-order-quest-view.jpg" alt="">
+<img class="borderless" src="{{ site.baseurl }}/img/so-order-quest-view.jpg" alt="">
 
 <p>Unlike the first study, participants did not compare each rendering against an explicit reference. They simply rated how natural the acoustics felt while watching the person move and speak.</p>
 
@@ -118,12 +117,12 @@ hidden: true
 <p>We did not need full AR avatars for this one. Instead, we built the equivalent of a controlled video call between two acoustically isolated rooms. Each participant saw the other on a screen and heard the full conversation — their own voice and the other participant's voice — rendered in a virtual acoustic condition.</p>
 
 <h4>Teleconferencing setup</h4>
-<img class="img-responsive borderless" src="{{ site.baseurl }}/img/so-mismatch-setup.jpg" alt="">
+<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-setup.jpg" alt="">
 
 <p>The trick was that both participants did not necessarily hear the same acoustic. One could perceive the discussion in a dry room while the other heard it in a highly reverberant space. From each participant's point of view, the whole conversation sounded coherent. Across the two ends of the call, however, the acoustic reality could be different.</p>
 
 <h4>Camera feed from both ends of the call</h4>
-<img class="img-responsive borderless" src="{{ site.baseurl }}/img/so-mismatch-feed.jpg" alt="">
+<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-feed.jpg" alt="">
 
 <p>To keep the conversation natural, we displayed discussion prompts on the screen: from low-stakes topics such as pineapple on pizza to slightly more serious debates. Every two and a half minutes, the acoustic condition changed, and participants answered short questions about how easy the conversation felt.</p>
 
@@ -135,7 +134,7 @@ hidden: true
 <p>The virtual rooms were generated in real time using the <a href="https://forum.ircam.fr/projects/detail/spat/">IRCAM Spat</a> reverberation tools in Max. We then analysed both subjective ratings and objective speech behaviour: speech level, pauses, turn-taking, overlaps, interruptions, and speaking rate.</p>
 
 <h4>Acoustic mismatch principle</h4>
-<img class="img-responsive borderless" src="{{ site.baseurl }}/img/so-mismatch-principle.jpg" alt="">
+<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-principle.jpg" alt="">
 
 <p>The strongest effect was not the mismatch itself, but the acoustic condition each participant personally experienced. Participants found the conversation easier to follow in the least reverberant condition and adapted their own vocal level accordingly. In other words, the system was convincing enough to trigger expected speech adaptations.</p>
 

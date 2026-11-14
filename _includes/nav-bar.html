@@ -1,7 +1,7 @@
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <!-- <div class="container-fluid"> -->
+
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -9,27 +9,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!-- <li> -->
-                <a class="navbar-brand page-scroll navbar-link" href="{{ site.baseurl }}/index.html">David Poirier-Q.</a>
-            <!-- </li> -->
+
+            <a class="navbar-brand navbar-link" href="{{ site.baseurl }}/index.html">David Poirier-Q.</a>
+
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse nav-fill" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav nav-fill w-100">
+            <ul class="nav navbar-nav">
 
                 <li class="dropdown">
-                    <a href="" class="page-scroll dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
-                    <ul class="dropdown-menu" style="right: auto; left: auto;">
+                    <a href="" class="dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <ul class="dropdown-menu">
 
-                         <!-- loop over pages, sorted by decreasing year -->
-                        {% assign sortedPages = site.projects | sort:'year' %}
+                        {% assign projects = site.projects | sort:'year' %}
 
-                        {% for page in sortedPages reversed %}
-                        {% unless page.hidden %}
+                        {% for project in projects reversed %}
+                        {% unless project.hidden %}
 
-                        <li><a class="navbar-link" href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
+                        <li><a class="navbar-link" href="{{ project.url | prepend: site.baseurl }}">{{project.title}}</a></li>
 
                         {% endunless %}
                         {% endfor %}
@@ -38,26 +36,24 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="" class="page-scroll dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others</a>
-                    <ul class="dropdown-menu" style="right: 0; left: auto;">
+                    <a href="" class="dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others</a>
+                    <ul class="dropdown-menu">
 
-                        {% for page in site.others %}
-                        <li><a class="navbar-link" href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
+                        {% for other in site.others %}
+                        <li><a class="navbar-link" href="{{ other.url | prepend: site.baseurl }}">{{other.title}}</a></li>
                         {% endfor %}
 
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a class="navbar-link" href="{{ site.baseurl }}/pages/publications.html">Publications <!--<span class="caret"></span>--> </a>
-                    <!-- <ul class="dropdown-menu" style="right: 0; left: auto;">
-                        <li><a href="{{ site.baseurl }}/pages/publications.html">Publications</a></li>
-                    </ul> -->
+                    <a class="navbar-link" href="{{ site.baseurl }}/pages/publications.html">Publications</a>
+
                 </li>
 
                 <li class="dropdown">
-                    <a href="" class="page-scroll dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                    <ul class="dropdown-menu" style="right: 0; left: auto;">
+                    <a href="" class="dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
                         <li><a class="navbar-link" href="{{ site.baseurl }}/pages/cv.html">CV</a></li>
                         <li><a class="navbar-link" href="{{ site.baseurl }}/pages/who-am-i.html">Who am I</a></li>
                     </ul>

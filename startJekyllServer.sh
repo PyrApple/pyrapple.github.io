@@ -1,12 +1,12 @@
-# for Bundler setup, see:
-# https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
-#
-# basically (if ruby installed):
-# > gem install bundler
-# > bundle install
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")"
 
-# launch localhost http server
-bundle exec jekyll serve --baseurl '' --port 8000 --host=0.0.0.0
+# Use this Mac's installed Ruby when available; otherwise use the active Ruby.
+ruby_version=$(cat .ruby-version)
+if [ -d "$HOME/.rubies/ruby-$ruby_version/bin" ]; then
+    export PATH="$HOME/.rubies/ruby-$ruby_version/bin:$PATH"
+fi
 
-# open page in browser
-# open /Applications/Browsers/Google\ Chrome.app/ http://localhost:4000/
+exec bundle exec jekyll serve --host 127.0.0.1 --port 8000 "$@"
+# exec bundle exec jekyll serve --host 127.0.0.1 --port 8000 "$@" --unpublished

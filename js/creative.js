@@ -9,11 +9,16 @@
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
+        var href = $(this).attr('href');
+        if (!href || href.charAt(0) !== '#' || href.length === 1) return;
+
+        var target = document.getElementById(href.slice(1));
+        if (!target) return;
+
         event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: $(target).offset().top - 50
+        }, 1250, 'easeInOutExpo');
     });
 
     // Highlight the top nav as scrolling occurs

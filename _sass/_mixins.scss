@@ -1,91 +1,15 @@
-@mixin transition-all()
-{
-    -webkit-transition: all 0.05s;
-    -moz-transition: all 0.05s;
-    transition: all 0.05s;
+@mixin sans-serif-font() {
+    font-family: 'Roboto', sans-serif;
 }
 
-@mixin background-cover()
-{
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-@mixin button-variant($color, $background, $border)
-{
-    border:1.5px solid $border;
-    border-radius: 10px;
-    border-color: $border;
-	color: $color;
-	background-color: $background;
-	@include transition-all;
-
-	&:hover,
-	&:focus,
-	&.focus,
-	&:active,
-	&.active,
-	.open > .dropdown-toggle & {
-		color: lighten($color, 100%);
-		background-color: darken($background, 15%);
-    	border-color: darken($border, 27%);
-    	// border: 1px solid black;
-	}
-	&:active,
-	&.active,
-	.open > .dropdown-toggle & {
-		background-image: none;
-	}
-	&.disabled,
-	&[disabled],
-	fieldset[disabled] & {
-		&,
-		&:hover,
-		&:focus,
-		&.focus,
-		&:active,
-		&.active {
-			background-color: $background;
-			border-color: $border;
-		}
-	}
-
-	.badge {
-		color: $background;
-		background-color: $color;
-	}
-}
-
-
-@mixin link-variant($color, $color-hover)
-{
+@mixin link-variant($color, $color-hover) {
     color: $color;
-    
-    &:visited {
-      color: $color;
+
+    &:visited, &:active {
+        color: $color;
     }
+
     &:hover {
-      color: $color-hover;
+        color: $color-hover;
     }
-    &:active {
-      color: $color;
-    }
-}
-
-
-@mixin sans-serif-font()
-{
-	/*font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
-	/*font-family: "GeoSansLight", Helvetica, Arial, sans-serif;*/
-	/*font-family: 'Ubuntu', sans-serif;*/
-	font-family: 'Roboto', sans-serif;
-	/*font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;*/
-}
-
-@mixin serif-font()
-{
-	font-family: "Times New Roman", Times, serif;
-	/*font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;*/
 }

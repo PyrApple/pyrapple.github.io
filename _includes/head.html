@@ -3,18 +3,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | escape }}">
+    <meta name="author" content="David Poirier-Quinot">
 
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/favicon.png" />
 
-    <title>DavidPQ</title>
+    <title>{% if page.title %}{{ page.title | escape }} | {% endif %}DavidPQ</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
