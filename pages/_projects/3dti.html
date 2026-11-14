@@ -11,9 +11,7 @@ thumbnail: 3dti-thumbnail.jpg
 
 <h4>Project introduction video</h4>
 
-<div class="embed-responsive embed-responsive-16by9 ">
-  <iframe src="https://www.youtube.com/embed/g_FsF28bsmw" frameborder="0" allowfullscreen></iframe>
-</div>
+<iframe class="video" src="https://www.youtube.com/embed/g_FsF28bsmw" allowfullscreen></iframe>
 
 <p>My first contribution to the project was to work on understanding and simulating the impact of various hearing loss conditions on the perception of an auditory scene. We used these research to develop the 3D Tune-In audio engine, a binaural encoder capable of simulating both the effect of various hearing loss conditions and how hearing aids help mitigate these effects. The engine can downloaded from the <a href="https://3d-tune-in.eu/toolkit-developers">3D Tune-In website</a>, available as either a VST, a C++ SDK or a Unity plug-in.</p>
 
@@ -28,21 +26,21 @@ thumbnail: 3dti-thumbnail.jpg
 
 <div class="row">
 
-  <div class="col-md-4 col-xs">
+  <div class="col-md-4">
     <h5>Anechoic scene (original)</h5>
     <audio controls preload='none'>
-      <source src="{{ site.baseurl }}/sounds/3dti-anechoic.mp3" type="audio/mp3">
+      <source src="{{ site.baseurl }}/sounds/3dti-anechoic.mp3" type="audio/mpeg">
       </audio>
   </div>
 
-  <div class="col-md-4 col-xs">
+  <div class="col-md-4">
     <h5>Stereo RIR</h5>
-    <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-stereo.mp3" type="audio/mp3"></audio>
+    <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-stereo.mp3" type="audio/mpeg"></audio>
   </div>
 
-  <div class="col-md-4 col-xs">
+  <div class="col-md-4">
     <h5>Ambisonic 3rd order RIR</h5>
-    <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-abir-20spk-3rd-allrad.mp3" type="audio/mp3"></audio>
+    <audio controls preload='none'><source src="{{ site.baseurl }}/sounds/3dti-abir-20spk-3rd-allrad.mp3" type="audio/mpeg"></audio>
   </div>
 
 </div>

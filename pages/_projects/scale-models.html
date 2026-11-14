@@ -32,11 +32,13 @@ thumbnail: sm-thumbnail.jpg
 
 <p> We initially had plans to design our own amplifier, to work with a pair of <a href="https://www.knowles.com/">Knowles</a> microphones. After breaking and burning a few capsules, we went and asked <a href="http://feichter-audio.com/">Feichter Audio</a> for help. They kindly helped us, neatly embedding the circuit into the XLR adapter.</p>
 
-<div class="col-xs-12 col-lg-6">
-  <img src="{{ site.baseurl }}/img/sm-micro-1.jpg" alt="">
-</div>
-<div class="col-xs-12 col-lg-6">
-  <img src="{{ site.baseurl }}/img/sm-micro-2.jpg" alt="">
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <img src="{{ site.baseurl }}/img/sm-micro-1.jpg" alt="">
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <img src="{{ site.baseurl }}/img/sm-micro-2.jpg" alt="">
+  </div>
 </div>
 
 <p> All that remained was to characterize the frequency response of the resulting circuit, to ensure that it would behave on the “scaled” audible spectrum (from 160Hz up to 160kHz).</p>
@@ -45,8 +47,10 @@ thumbnail: sm-thumbnail.jpg
 
 <p> As can be seen on the picture above, the current characteristic (“in 1, FG” blue curve) limits the overall system to applications below 45kHz (5.6kHz once scaled). As it turned out, the tweeter used for that measurement (Fenton CT25 below) proved to be the limiting factor.</p>
 
-<div class="col-xs-12">
-  <img style="max-width:500px; width:100%;" src="{{ site.baseurl }}/img/sm-fenton-ct25.jpg" alt="">
+<div class="row">
+  <div class="col-xs-12">
+    <img style="max-width:500px; width:100%;" src="{{ site.baseurl }}/img/sm-fenton-ct25.jpg" alt="">
+  </div>
 </div>
 
 
@@ -67,6 +71,4 @@ thumbnail: sm-thumbnail.jpg
 <p> The second objective of this project was to create a plugin that would enable real-time auralisation of scale models. The concept is simple: record a buffer (sound playback or live feed from microphone), increase its playback rate by the factor of your scale model, play it back in the scale model, record it, decrease the playback rate of the resulting buffer by the same factor, and play! The application ... is not so trivial. The result is a neat little plugin called <a href="http://smallroomz.dalembert.upmc.fr/">smallRoomZ</a>. Don't let me fool you, Peter Stitt from <a href="https://www.ssa-plugins.com/">SSA Plugins</a> is the one who did all the work here :).</p>
 
 <h4>smallRoomZ plugin demo</h4>
-<div class="embed-responsive embed-responsive-16by9 ">
-  <iframe src="https://www.youtube.com/embed/fjQ66804kSA?si=IBibBAyyZZXhefc2" frameborder="0" allowfullscreen></iframe>
-</div>
+<iframe class="video" src="https://www.youtube.com/embed/fjQ66804kSA?si=IBibBAyyZZXhefc2" allowfullscreen></iframe>

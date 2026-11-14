@@ -47,7 +47,7 @@ h6, p, ul{
     margin-bottom: calc(#{$margin_default} * 1.0);
 }
 
-audio, video, img:not(.panel-img), .embed-responsive, .iframe-responsive {
+audio, video, img:not(.panel-img), .video, .embed-responsive, .iframe-responsive {
     margin-bottom: calc(#{$margin_default} * 1.0 + 5px);
     margin-top: 5px;
 }
@@ -282,6 +282,18 @@ img:not(.panel-img) {
     margin-right: auto;
 }
 
+// A single class replaces the old Bootstrap video wrapper.
+.video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid $border-color;
+    border-radius: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .embed-responsive{
     border: 1px solid $border-color;
     border-radius: 1px;
@@ -296,7 +308,8 @@ img:not(.panel-img) {
     padding: 0;
 }
 
-img.borderless{
+img.borderless,
+.video.borderless {
     border-style: none;
 }
 
@@ -335,6 +348,7 @@ audio:focus {
 .card > a {
     display: block;
     height: 100%;
+    text-decoration: none;
 }
 
 .panel-img {

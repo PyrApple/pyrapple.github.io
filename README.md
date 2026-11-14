@@ -72,8 +72,16 @@ Images resize automatically. Use ordinary HTML:
 
 Add `class="borderless"` only when you want to remove an image's border.
 Keep a short inline `max-width` for an image that needs a particular size.
-For videos, keep the existing `embed-responsive embed-responsive-16by9` wrapper;
-for side-by-side content, use Bootstrap 3 `row` and `col-sm-6` classes.
+For YouTube, Vimeo and other 16:9 videos, use a single iframe; no wrapper is needed:
+
+```html
+<iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+```
+
+The shared `.video` style handles sizing, spacing and the border. Add `borderless`
+only if wanted. Keep the separate SoundCloud and PDF embed markup, since those
+are not video players. For side-by-side content, use Bootstrap 3 `row` and
+`col-sm-6` classes.
 
 Page titles and descriptions also fill the browser title and description metadata.
 Pages without a description use the site description from `_config.yml`.
