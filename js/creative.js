@@ -27,15 +27,15 @@
         offset: 51
     })
 
-    // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    // Close the mobile menu when choosing a page, not when opening a subsection.
+    $('.navbar-collapse ul li a:not([data-toggle="dropdown"])').click(function() {
         $('.navbar-toggle:visible').click();
     });
 
     // Fit Text Plugin for Main Header
     $("h1").fitText(
         1.2, {
-            minFontSize: '35px',
+            minFontSize: '24px',
             maxFontSize: '65px'
         }
     );

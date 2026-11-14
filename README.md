@@ -26,7 +26,11 @@ From the repository directory:
 ./startJekyllServer.sh
 ```
 
-Open http://127.0.0.1:8000. Stop the server with Ctrl+C.
+Open http://127.0.0.1:8000 on the Mac. From an iPhone on the same Wi-Fi,
+open `http://<Mac-IP>:8000` using the Mac's local IP address (for example,
+`http://192.168.1.42:8000`). Find it in System Settings → Wi-Fi → Details → TCP/IP.
+The launcher listens on `0.0.0.0` to accept local network connections.
+Stop the server with Ctrl+C.
 Restart after changing `_config.yml`.
 
 To preview unfinished projects too:

@@ -6,47 +6,44 @@ layout: default
 
     <div class="container">
 
-        <div class="col-lg-12 col-lg-offset-0 text-center">
+        <h1 class="section-heading text-center no-margin-bottom">Acoustics and Mixed Realities</h1>
+        <h2 class="text-center">Research and Developments</h2>
 
-            <h1 class="section-heading text-center no-margin-bottom">Acoustics and Mixed Realities</h1>
-            <h2 class="text-center">Research and Developments</h2>
+        <br> <br>
 
-            <br> <br>
+        <div id="panels-list">
 
-            <div id="panels-list" class="row pack">
-                
-                <!-- loop over pages, sorted by decreasing year -->
-                {% assign projects = site.projects | sort:'year' %}
+            <!-- loop over pages, sorted by decreasing year -->
+            {% assign projects = site.projects | sort:'year' %}
 
-                {% for project in projects reversed %}
-                {% if project.thumbnail %}
-                {% unless project.hidden %}
+            {% for project in projects reversed %}
+            {% if project.thumbnail %}
+            {% unless project.hidden %}
 
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 card">
-                <a href="{{ project.url | prepend: site.baseurl }}" class="index-anchor">
-                    <div class="panel panel-default">
+            <div class="card">
+            <a href="{{ project.url | prepend: site.baseurl }}" class="index-anchor">
+                <div class="panel panel-default">
 
-                      <img class="panel-img" src="{{site.baseurl}}/img/{{project.thumbnail}}" alt="{{ project.title | escape }}">
+                  <img class="panel-img" src="{{site.baseurl}}/img/{{project.thumbnail}}" alt="{{ project.title | escape }}">
 
-                      <div class="panel-body">
-                        <h3 class="panel-title">{{ project.title | truncate: 34 }}</h3>
+                  <div class="panel-body">
+                    <h3 class="panel-title">{{ project.title | truncate: 34 }}</h3>
 
-                        <p class="text-left"><small>
-                        {{ project.description }}
-                        </small></p>
-                      </div>
-
-                    </div>
-                </a>
+                    <p class="text-left"><small>
+                    {{ project.description }}
+                    </small></p>
+                  </div>
 
                 </div>
-
-                {% endunless %}
-                {% endif %}
-                {% endfor %}
+            </a>
 
             </div>
 
+            {% endunless %}
+            {% endif %}
+            {% endfor %}
+
         </div>
+
     </div>
 </section>
