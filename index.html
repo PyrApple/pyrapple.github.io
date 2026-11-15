@@ -6,8 +6,8 @@ layout: default
 
     <div class="container">
 
-        <h1 class="text-center no-margin-bottom">Acoustics and Mixed Realities</h1>
-        <h2 class="text-center">Research and Developments</h2>
+        <h1 class="text-center">Acoustics and Mixed Realities</h1>
+        <!-- <h2 class="text-center">Research and Developments</h2> -->
 
         <br> <br>
 
@@ -20,9 +20,12 @@ layout: default
             {% if project.thumbnail %}
             {% unless project.hidden %}
 
-            <div class="card">
+            <div class="card{% if project.published == false %} card-draft{% endif %}">
             <a href="{{ project.url | prepend: site.baseurl }}">
                 <div class="panel panel-default">
+                  {% if project.published == false %}
+                  <span class="draft-label">Draft</span>
+                  {% endif %}
 
                   <img class="panel-img" src="{{site.baseurl}}/img/{{project.thumbnail}}" alt="{{ project.title | escape }}">
 

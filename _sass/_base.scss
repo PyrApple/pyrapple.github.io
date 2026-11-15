@@ -1,6 +1,7 @@
 $theme-primary: rgb(255, 255, 255);
 $theme-secondary: rgb(40, 40, 40);
 $border-color: rgb(200, 200, 200);
+$draft-color: rgb(198, 40, 40);
 
 $theme-police-link: rgb(82, 177, 234);
 $theme-police-inert: $theme-primary;
@@ -349,7 +350,7 @@ audio:focus {
 // Fit as many cards as possible, with at least 300px per card.
 #panels-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 
@@ -390,7 +391,27 @@ audio:focus {
 
 .panel:hover,
 .card > a:focus .panel {
-    border-color: darken($border-color, 20%);
+    border-color: darken($border-color, 30%);
+}
+
+// Draft projects are included only when serving/building with --unpublished.
+.card-draft .panel,
+.card-draft > a:focus .panel {
+    position: relative;
+    border: 2px solid $draft-color;
+}
+
+.draft-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    padding: 3px 7px;
+    border-radius: 3px;
+    background: $draft-color;
+    color: white;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .panel-title {
@@ -399,9 +420,10 @@ audio:focus {
 
 // Image-only cards with overlaid titles on phones.
 @media (max-width: 767px) {
-    // Keep one full-width card per row on phones.
+    // Two portrait cards per row on phones.
     #panels-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     #front-page h2 {
@@ -411,7 +433,7 @@ audio:focus {
     #panels-list .panel {
         container-type: inline-size;
         position: relative;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 1;
         height: auto;
         overflow: hidden;
     }
