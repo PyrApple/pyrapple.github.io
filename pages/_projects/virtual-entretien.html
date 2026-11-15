@@ -3,26 +3,26 @@ title: Voice Auralisation in XR
 year: 2025
 description: Acoustic rendering for realistic interactions in mixed realities.
 thumbnail: ve-thumbnail.jpg
-published: false
+published: true
 ---
 
-<p>This page gathers three studies conducted during <a href="https://www.pabloabeh.com">Pablo Abehsera Morell</a>'s PhD thesis, “Acoustic Rendering for Realistic Interactions in Mixed Realities”, defended in January 2026. The work was carried out in the context of the <a href="https://www.sonicom.eu/">Sonicom</a> project.</p>
+<p>In face-to-face conversations, our voice radiates differently depending on the direction we face. When virtual humans become part of everyday mixed-reality communication, should these effects also be reproduced? And if so, how accurately do we need to do it before the interaction starts feeling natural? This project was conducted by <a href="https://www.linkedin.com/in/pabloabeh/">Pablo Abehsera Morell</a> during his <a href="https://hal.science/tel-05730119v1">PhD thesis</a> as part of the <a href="https://www.sonicom.eu/">Sonicom</a> project.</p>
 
-<img src="{{ site.baseurl }}/img/ve-directivity-meas.jpg" alt="">
+<h4>Pablo during a green-screen recording session</h4>
+<img src="{{ site.baseurl }}/img/ve-order-meas.jpg" alt="">
 
-<p>In face-to-face conversations, our voice radiates differently depending on the direction we face. When virtual humans become part of everyday mixed-reality communication, should these effects also be reproduced? And if so, how accurately do we need to do it before the interaction starts feeling natural?</p>
-
-<p>We approached this question from three angles: first by trying to reconstruct voice directivity from limited room measurements, then by testing whether listeners noticed missing directional acoustic cues when seeing a visible virtual speaker, and finally by looking at what happens when two people hold a conversation while hearing it through different virtual acoustics.</p>
+<p>The question was approached with 3 questions, that led to 3 studies: 1) how well can we reconstruct voice directivity from limited room measurements, 2) can listeners notice missing directional acoustic cues when seeing a visible virtual speaker, and 3) what happens when two people hold a conversation while hearing it through different virtual acoustics.</p>
 
 <h3>Study 1: Reconstructing source directivity</h3>
 
-<p>The first study started from a practical problem. Measuring a room impulse response for every possible orientation of a speaker is tedious. For a mixed-reality application, where a virtual talker may turn their head at any time, this quickly becomes a problem.</p>
+<p>Measuring a room impulse response for every possible orientation of a speaker is tedious. For a mixed-reality application, where a virtual talker may turn their head at any time, this quickly becomes a problem. If we had just one omnidirectional measurement of a room, could we still reconstruct the energy variations of a rotating directional source?</p>
 
-<p>So we asked a smaller question: if we have one omnidirectional measurement of a room, can we project the energy variations of a rotating directional source onto it?</p>
+<h4>Anechoic voice directivity measurement session</h4>
+<img src="{{ site.baseurl }}/img/ve-directivity-meas.jpg" alt="">
 
-<p class="text-center"><a href="https://hal.science/hal-04188953">associated paper</a></p>
+<p>Pablo measured binaural room impulse responses in 3 rooms with different acoustic behaviours, using both an omnidirectional loudspeaker and a rotating directional loudspeaker. From there, he developed a method to modify the omnidirectional response so that it behaved more like the measured directional source.</p>
 
-<h4>RIR measurement setups in the three rooms (studio, conference room, amphitheatre)</h4>
+<h4>RIR measurement setups in the 3 rooms (studio, conference room, amphitheatre)</h4>
 <div class="row">
   <div class="col-md-4">
     <img src="{{ site.baseurl }}/img/ve-dirswap-studio.jpg" alt="">
@@ -35,9 +35,7 @@ published: false
   </div>
 </div>
 
-<p>We measured binaural room impulse responses in three rooms with different acoustic behaviours, using both an omnidirectional loudspeaker and a rotating directional loudspeaker. From there, Pablo developed a method to modify the omnidirectional response so that it behaved more like the measured directional source.</p>
-
-<p>The method worked by splitting the impulse response into time regions — direct sound, early reflections, and late reverberation — and applying frequency-dependent gain changes to each region. In short: keep the room measurement, but bend it so that it reacts as if the source had turned.</p>
+<p>The method worked by splitting the impulse response into time regions — direct sound, early reflections, and late reverberation — and applying frequency-dependent gain changes to each region.</p>
 
 <h4>Directivity projection principle</h4>
 <img style="max-width: 550px; width:100%;" class="borderless" src="{{ site.baseurl }}/img/ve-dirswap-algo.jpg" alt="">
@@ -72,76 +70,87 @@ published: false
   </div>
 </div>
 
-<p>Participants were then asked to compare auralisations based on the measured rotating source with auralisations generated using the reconstruction method. The results were promising, but room-dependent: the reconstruction worked well in some acoustic contexts and less convincingly in others.</p>
+<p>Participants were then asked to compare auralisations based on the measured rotating source with auralisations generated using the reconstruction method.</p>
 
-<p>It was also a fairly strict test. Participants compared the reconstruction directly against a measured reference, without any visual cue to support the illusion. Useful scientifically, but not quite how people experience virtual humans in AR. That naturally called for a second study, this time with a visible speaker.</p>
-
+<p class="text-center"><a href="https://hal.science/hal-04188953">associated paper</a></p>
 
 <h3>Study 2: Seeing the source rotate</h3>
 
-<p>The second study asked a different question: if a virtual person visibly turns while speaking, do listeners care whether the reverberation changes accordingly?</p>
+<p>If a virtual person visibly turns while speaking, do listeners care whether the reverberation changes accordingly? For this study, we needed a person speaking and rotating in a virtual room. So we recorded ourselves in front of a green screen, speaking, singing, whistling, etc. The same 360° camera was then used to capture the target room. After removing the green screen from the videos, the recorded speakers were composited into the room panorama. Once displayed in a Quest headset, participants saw what looked like a 360° video of someone talking in front of them.</p>
 
-<p class="text-center"><a href="https://hal.science/hal-04639132">associated paper</a></p>
+<h4>Participant viewpoint during the experiment (mono sound)</h4>
+<iframe class="video" src="https://www.youtube.com/embed/MBFkSzAYc64?si=8qlM-nABXAqFHy24" allowfullscreen></iframe>
 
-<p>For this, we needed a person speaking and rotating in a virtual room. So we recorded ourselves in front of a green screen, speaking, singing, whistling, shouting, and generally doing the kind of things one does when trying to stress-test an auralisation system.</p>
+<p>On the audio side, we used binaural room impulse responses measured with a rotating Genelec loudspeaker placed where the virtual speaker would appear. Several auralisation strategies were then compared with varying degrees of source directivity reconstruction quality.</p>
 
-<h4>Green-screen recording session</h4>
-<img class="borderless" src="{{ site.baseurl }}/img/ve-thumbnail.jpg" alt="">
-
-<p>The same 360° camera was then used to capture the target room. After removing the green screen from the videos, the recorded speakers were composited into the room panorama. Once displayed in a Quest headset, participants saw what looked like a 360° video of someone talking in front of them.</p>
-
-<h4>Virtual speaker composited in the room</h4>
-<iframe class="video" src="https://www.youtube.com/embed/YOUTUBE_ID_HERE" allowfullscreen></iframe>
-
-<p>On the audio side, we used binaural room impulse responses measured with a rotating Genelec loudspeaker placed where the virtual speaker would appear. Several auralisation strategies were then compared: one with the full measured orientation-dependent reverberation, one where only the direct sound followed the speaker orientation, and simplified versions where the reverberation was static or intentionally mismatched.</p>
-
-<h4>Participant view inside the Quest headset</h4>
-<img class="borderless" src="{{ site.baseurl }}/img/so-order-quest-view.jpg" alt="">
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Simulated directivity (centre of room)</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-natural1-config1-cond1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="col-sm-6">
+    <h4>Simulated directivity (near wall on your left)</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-natural1-config2-cond1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
 
 <p>Unlike the first study, participants did not compare each rendering against an explicit reference. They simply rated how natural the acoustics felt while watching the person move and speak.</p>
 
-<p>The result was quite clear: visible virtual speakers benefited from orientation-dependent acoustic cues. Participants generally rated the full measured rendering as more natural than simplified alternatives. Visual information did not hide the missing acoustic cues; if anything, it made the inconsistencies easier to notice.</p>
-
-<p>This study did not directly reuse the reconstruction method from the first one. The two studies were developed partly in parallel, and this one compared measured directivity against simpler rendering strategies. Still, the result is encouraging: if even direct-sound-only directivity already improves naturalness, a more complete reconstruction approach is likely worth pursuing.</p>
+<p class="text-center"><a href="https://hal.science/hal-04639132">associated paper</a></p>
 
 <h3>Study 3: Mismatched acoustics</h3>
 
-<p>The third study moved away from isolated listening tests and into actual conversation.</p>
+<p>If I hear our conversation as if we were in a dry studio, while you hear the same conversation as if we were in a reverberant hall, does that mismatch affect how naturally we interact?</p>
 
-<p>The question was simple, and slightly weird: if I hear our conversation as if we were in a dry studio, while you hear the same conversation as if we were in a reverberant hall, does that mismatch affect how naturally we interact?</p>
-
-<p class="text-center"><a href="https://hal.science/hal-05149597">associated paper</a></p>
+<h4>Acoustic mismatch principle</h4>
+<img src="{{ site.baseurl }}/img/ve-mismatch-usecase.jpg" alt="">
 
 <p>We did not need full AR avatars for this one. Instead, we built the equivalent of a controlled video call between two acoustically isolated rooms. Each participant saw the other on a screen and heard the full conversation — their own voice and the other participant's voice — rendered in a virtual acoustic condition.</p>
 
 <h4>Teleconferencing setup</h4>
-<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-setup.jpg" alt="">
+<div class="row">
+<div class="col-sm-6"><img src="{{ site.baseurl }}/img/ve-mismatch-setup-1.jpg" alt=""></div>
+<div class="col-sm-6"><img src="{{ site.baseurl }}/img/ve-mismatch-setup-2.jpg" alt=""></div>
+</div>
 
-<p>The trick was that both participants did not necessarily hear the same acoustic. One could perceive the discussion in a dry room while the other heard it in a highly reverberant space. From each participant's point of view, the whole conversation sounded coherent. Across the two ends of the call, however, the acoustic reality could be different.</p>
+<p>Both participants did not necessarily hear the same acoustic. One could perceive the discussion in a dry room while the other heard it in a highly reverberant space.</p>
 
-<h4>Camera feed from both ends of the call</h4>
-<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-feed.jpg" alt="">
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Anechoic</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-mismatch-anech.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="col-sm-6">
+    <h4>Room 1</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-mismatch-room1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Room 2</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-mismatch-room2.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="col-sm-6">
+    <h4>Room 3</h4>
+    <audio controls preload="none">
+      <source src="{{ site.baseurl }}/sounds/ve-mismatch-room3.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
 
-<p>To keep the conversation natural, we displayed discussion prompts on the screen: from low-stakes topics such as pineapple on pizza to slightly more serious debates. Every two and a half minutes, the acoustic condition changed, and participants answered short questions about how easy the conversation felt.</p>
+<p>To keep the conversation natural, we displayed discussion prompts on the screen: from low-stakes topics to slightly more serious debates. The virtual rooms were generated in real time using the <a href="https://forum.ircam.fr/projects/detail/spat/">IRCAM Spat</a> reverberation tools in Max. We then analysed both subjective ratings and objective speech behaviour: speech level, pauses, turn-taking, overlaps, interruptions, and speaking rate.</p>
 
-<h4>Participants discussing through the setup</h4>
-<iframe class="video" src="https://www.youtube.com/embed/YOUTUBE_ID_HERE" allowfullscreen></iframe>
+<h4>Participants during the experiment</h4>
+<img src="{{ site.baseurl }}/img/ve-mismatch-participants.jpg" alt="">
 
-<p>The virtual rooms were generated in real time using the <a href="https://forum.ircam.fr/projects/detail/spat/">IRCAM Spat</a> reverberation tools in Max. We then analysed both subjective ratings and objective speech behaviour: speech level, pauses, turn-taking, overlaps, interruptions, and speaking rate.</p>
-
-<h4>Acoustic mismatch principle</h4>
-<img class="borderless" src="{{ site.baseurl }}/img/so-mismatch-principle.jpg" alt="">
-
-<p>The strongest effect was not the mismatch itself, but the acoustic condition each participant personally experienced. Participants found the conversation easier to follow in the least reverberant condition and adapted their own vocal level accordingly. In other words, the system was convincing enough to trigger expected speech adaptations.</p>
-
-<p>More surprisingly, the acoustic condition heard by the interlocutor had little measurable influence on the conversation. Most interaction metrics remained stable: people kept speaking, pausing, alternating turns, and avoiding overlaps in broadly similar ways across conditions. Conversation, it turns out, is fairly robust. Annoyingly robust, if you were hoping for a dramatic effect.</p>
-
-<p>Future work will extend this paradigm beyond room acoustics alone. An obvious next step is to introduce different levels of background noise: what happens when one participant hears the conversation in a quiet room while the other is effectively in a noisy public space? Unlike reverberation alone, such mismatches may directly affect speech intelligibility, and could therefore have a stronger impact on interaction.</p>
-
-<h3>Where this leaves us</h3>
-
-<p>Taken together, these studies suggest that voice directivity is a relevant component of realistic auditory rendering for virtual humans. Listeners notice when a visible speaker's acoustic behaviour does not match their motion, and even simple directivity cues can improve naturalness.</p>
-
-<p>At the same time, not every acoustic discrepancy breaks interaction. In the conversational study, participants clearly reacted to the acoustics they personally heard, but the mismatch between both ends of the call had limited measurable impact on the structure of the exchange.</p>
-
-<p>That is probably the main lesson of the PhD: realistic acoustic rendering matters, but not all acoustic details matter equally, and not in every context. The challenge for mixed-reality communication is therefore not to simulate everything perfectly, but to identify which cues are worth rendering, when, and for whom.</p>
+<p class="text-center"><a href="https://hal.science/hal-05149597">associated paper</a></p>
