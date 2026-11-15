@@ -226,6 +226,18 @@ a:not(.navbar-link) {
     }
 }
 
+// Remove click/tap highlights while keeping keyboard focus visible.
+#mainNav .navbar-brand,
+#mainNav .navbar-link,
+#mainNav .dropdown-menu > li > a {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
 @media (min-width: 768px) {
     .navbar-nav {
         float: none;
