@@ -1,6 +1,6 @@
 $theme-primary: rgb(255, 255, 255);
 $theme-secondary: rgb(40, 40, 40);
-$border-color: rgb(200, 200, 200);
+$border-color: rgb(150, 150, 150);
 $draft-color: rgb(198, 40, 40);
 
 $theme-police-link: rgb(82, 177, 234);
@@ -380,7 +380,7 @@ audio:focus {
 .panel {
     height: 100%;
     margin-bottom: 0px;
-    border: 1px solid $border-color;
+    border: 1px solid lighten($border-color, 30%);
     overflow: hidden;
     color: $theme-secondary;
     background-color: $theme-primary;
@@ -391,7 +391,7 @@ audio:focus {
 
 .panel:hover,
 .card > a:focus .panel {
-    border-color: darken($border-color, 30%);
+    border-color: $border-color;
 }
 
 // Draft projects are included only when serving/building with --unpublished.
@@ -430,6 +430,16 @@ audio:focus {
         font-size: clamp(20px, 6vw, 30px);
     }
 
+    .root-div:has(#front-page) {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #front-page > .container {
+            padding-left: 0px;
+            padding-right: 0px;
+    }
+
     #panels-list .panel {
         container-type: inline-size;
         position: relative;
@@ -452,7 +462,7 @@ audio:focus {
         display: flex;
         align-items: center;
         padding: 12px;
-        background: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.20);
     }
 
     #panels-list .panel-title {
